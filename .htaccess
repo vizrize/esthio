@@ -1,0 +1,28 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Redirect index.html to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^index\.html$ index.php [L,R=301]
+
+# Set default document
+DirectoryIndex index.php index.html
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Protect files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to reviews.json for security (only PHP should read it)
+<Files "reviews.json">
+    Order allow,deny
+    Allow from all
+</Files>
