@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<title>Esthio - Gabin Es Krim Gabin | esthio.biz.id</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<style>
+@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:#f1f1f1;}
+::-webkit-scrollbar-thumb{background:#888;border-radius:4px;}
+::-webkit-scrollbar-thumb:hover{background:#555;}
+
+@keyframes bounce-in {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.cart-bounce {
+  animation: bounce-in 0.3s ease-out;
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-menu {
+  animation: slide-down 0.3s ease-out;
+}
+
+.cart-open {
+  transform: translateX(0) !important;
+}
+
+.overlay-visible {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#76340e", "surface": "#fff8f2", "error-container": "#ffdad6", "surface-container-lowest": "#ffffff", "on-primary-fixed": "#2a1700", "surface-container-high": "#f1e7db", "surface-dim": "#e2d9cd", "tertiary-fixed": "#85f8c4", "on-secondary": "#ffffff", "secondary-fixed-dim": "#ffb693", "surface-container-low": "#fcf2e6", "surface-tint": "#855300", "inverse-on-surface": "#f9efe3", "surface-container": "#f6ece0", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#005137", "inverse-surface": "#353028", "secondary-fixed": "#ffdbcc", "surface-container-highest": "#ebe1d5", "tertiary-container": "#50c594", "on-tertiary": "#ffffff", "outline": "#867461", "surface-variant": "#ebe1d5", "secondary-container": "#fd9e70", "on-tertiary-container": "#004e35", "on-primary-container": "#613b00", "on-error": "#ffffff", "on-error-container": "#93000a", "surface-bright": "#fff8f2", "on-primary-fixed-variant": "#653e00", "inverse-primary": "#ffb95f", "outline-variant": "#d8c3ad", "primary-fixed": "#ffddb8", "on-background": "#1f1b14", "on-primary": "#ffffff", "background": "#fff8f2", "on-surface-variant": "#534434", "primary-container": "#f59e0b", "tertiary-fixed-dim": "#68dba9", "primary-fixed-dim": "#ffb95f", "on-surface": "#1f1b14", "on-secondary-fixed": "#351000", "on-tertiary-fixed": "#002114", "secondary": "#944a23", "primary": "#855300", "tertiary": "#006c4a", "on-secondary-fixed-variant": "#76330d" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "gutter-md": "1.5rem", "gutter": "1rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-md": "2rem", "margin-lg": "3rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin": "1rem", "space-xl": "2.5rem" }, "fontFamily": { "headline-lg-mobile": [ "Plus Jakarta Sans" ], "display-lg-mobile": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "title-md": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "title-lg": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "display-lg-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "700" } ], "title-md": [ "16px", { "lineHeight": "22px", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "display-lg": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "title-lg": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" } ] } } } };
+</script>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+
+<!-- Cart Sidebar -->
+<div id="cartSidebar" class="fixed inset-y-0 right-0 w-full sm:w-96 bg-surface shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+  <div class="h-full flex flex-col">
+    <div class="flex items-center justify-between p-space-lg border-b border-outline-variant bg-surface-container-low">
+      <div class="flex items-center gap-space-sm">
+        <span class="material-symbols-outlined text-primary text-[28px]">shopping_cart</span>
+        <h2 class="font-headline-sm text-headline-sm text-on-surface">Keranjang Belanja</h2>
+      </div>
+      <button onclick="toggleCart()" class="w-10 h-10 rounded-full hover:bg-surface-container flex items-center justify-center transition-colors">
+        <span class="material-symbols-outlined text-on-surface">close</span>
+      </button>
+    </div>
+    
+    <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-space-lg">
+      <div id="emptyCartMessage" class="flex flex-col items-center justify-center h-full text-center">
+        <span class="material-symbols-outlined text-6xl text-on-surface-variant opacity-50 mb-space-sm">shopping_cart</span>
+        <p class="font-title-md text-title-md text-on-surface-variant font-semibold">Keranjang belanja kosong</p>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Tambahkan es krim favorit Anda!</p>
+      </div>
+    </div>
+    
+    <div id="cartFooter" class="border-t border-outline-variant p-space-lg bg-surface-container-low hidden">
+      <div class="flex items-center justify-between mb-space-md">
+        <span class="font-title-lg text-title-lg text-on-surface">Total:</span>
+        <span id="cartTotal" class="font-headline-md text-headline-md text-primary font-bold">Rp 0</span>
+      </div>
+      <button onclick="checkout()" class="w-full inline-flex items-center justify-center gap-space-sm px-space-lg py-space-md rounded-full bg-[#25D366] text-white font-label-lg text-label-lg font-bold shadow-lg hover:bg-[#20ba59] transition-all active:scale-95">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.777.818 2.789.818 3.18 0 5.767-2.587 5.767-5.766.001-3.182-2.585-5.804-5.765-5.804zm8.469 5.766c0 4.673-3.799 8.468-8.47 8.468-1.463 0-2.85-.38-4.06-1.047l-4.52 1.185 1.206-4.408c-.732-1.265-1.121-2.709-1.121-4.198 0-4.672 3.799-8.468 8.47-8.468 4.671 0 8.495 3.796 8.495 8.468z"></path></svg>
+        <span>Checkout via WhatsApp</span>
+      </button>
+      <button onclick="clearCart()" class="w-full mt-space-sm px-space-lg py-space-sm rounded-full bg-surface-container text-on-surface font-label-md text-label-md font-bold hover:bg-surface-container-high transition-all">
+        Kosongkan Keranjang
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="cartOverlay" onclick="toggleCart()" class="fixed inset-0 bg-black/50 z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(120,53,15,0.06)]">
+  <div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg flex items-center justify-between">
+    <div class="flex items-center gap-space-sm">
+      <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm">
+        <span class="material-symbols-outlined text-[24px]">icecream</span>
+      </div>
+      <div class="flex flex-col">
+        <a class="font-headline-sm text-headline-sm text-primary tracking-tight font-extrabold flex items-center gap-1 leading-none" href="#">Esthio<span class="w-1.5 h-1.5 rounded-full bg-secondary self-end mb-1"></span></a>
+        <span class="text-[11px] font-semibold text-secondary tracking-wider uppercase">esthio.biz.id</span>
+      </div>
+    </div>
+    
+    <nav class="hidden lg:flex items-center gap-space-lg">
+      <a class="transition-colors text-primary font-title-md text-title-md font-bold" href="#varian">Katalog Rasa</a>
+      <a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#keunggulan">Keunggulan Bahan</a>
+      <a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#reviews">Review</a>
+      <a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#katalog-lengkap">Daftar Menu</a>
+      <a class="font-title-md text-title-md text-on-surface-variant hover:text-primary transition-colors" href="#lokasi">Pemesanan & Kontak</a>
+    </nav>
+    
+    <div class="flex items-center gap-space-md">
+      <button onclick="toggleCart()" class="relative inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg font-bold shadow-md hover:bg-primary hover:text-on-primary transition-all active:scale-95">
+        <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+        <span class="hidden sm:inline">Keranjang</span>
+        <span id="cartCount" class="absolute -top-2 -right-2 min-w-[24px] h-6 px-1.5 rounded-full bg-secondary text-white text-xs font-bold flex items-center justify-center shadow-md cart-bounce">0</span>
+      </button>
+      
+      <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-full hover:bg-surface-container flex items-center justify-center transition-colors">
+        <span class="material-symbols-outlined text-on-surface">menu</span>
+      </button>
+    </div>
+  </div>
+  
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-outline-variant bg-surface/98 backdrop-blur-xl mobile-menu">
+    <nav class="px-margin py-space-md flex flex-col gap-1">
+      <a class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all font-title-md" href="#varian" onclick="toggleMobileMenu()">Katalog Rasa</a>
+      <a class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all font-title-md" href="#keunggulan" onclick="toggleMobileMenu()">Keunggulan Bahan</a>
+      <a class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all font-title-md" href="#reviews" onclick="toggleMobileMenu()">Review</a>
+      <a class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all font-title-md" href="#katalog-lengkap" onclick="toggleMobileMenu()">Daftar Menu</a>
+      <a class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all font-title-md" href="#lokasi" onclick="toggleMobileMenu()">Pemesanan & Kontak</a>
+    </nav>
+  </div>
+</header>
+
+<main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)] pb-space-xl">
+<div class="flex flex-col w-full">
+
+<section class="w-full relative overflow-hidden py-space-lg md:py-space-xl">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-md items-center">
+<div class="lg:col-span-7 flex flex-col gap-space-md z-10">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high w-fit shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">icecream</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-bold tracking-wide">Esthio • Gabin Es Krim</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">
+Sensasi Renyah & <br class="hidden sm:inline">
+<span class="text-secondary underline decoration-primary-container decoration-wavy decoration-2">Cold Melt</span> di Mulut!
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+Perpaduan legendaris keping biskuit gabin gurih berkaramel renyah dengan isian <strong class="text-primary font-bold">ice cream tape singkong fermentasi madu alami</strong> khas Esthio yang lembut, creamy, dan dingin menyegarkan.
+</p>
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-xl py-space-md rounded-full bg-[#25D366] text-white font-label-lg text-label-lg font-bold shadow-lg hover:bg-[#20ba59] transition-all active:scale-95 group" href="#varian">
+<span class="">Lihat Menu & Pesan</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+<button onclick="toggleCart()" class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md rounded-full bg-surface-container text-primary font-label-lg text-label-lg font-bold hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+<span class="">Lihat Keranjang</span>
+</button>
+</div>
+<div class="pt-space-md mt-space-xs flex flex-wrap items-center gap-y-space-sm gap-x-space-md text-on-surface-variant">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">100% Homemade</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-[18px]">ac_unit</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Dikirim Beku Termal Box & Ice Gel</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">local_shipping</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Katalog Resmi: esthio.biz.id</span>
+</div>
+</div>
+</div>
+
+<div class="lg:col-span-5 relative flex justify-center items-center mt-space-md lg:mt-0">
+<div class="absolute -inset-4 bg-primary-fixed/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+<div class="relative rounded-3xl bg-surface-container-lowest p-space-sm shadow-xl w-full max-w-md group">
+<div class="relative overflow-hidden rounded-2xl bg-surface-container aspect-square">
+<img alt="Esthio Gabin Es Krim Tape - Semua Varian" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out" src="alvarian.jpg">
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-md px-space-md py-space-xs rounded-full shadow-md flex items-center gap-1.5 animate-bounce" style="animation-duration: 3s;">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Crunchy Gabin Top</span>
+</div>
+<div class="absolute top-1/2 -right-2 transform -translate-y-1/2 bg-surface/90 backdrop-blur-md px-space-md py-space-xs rounded-full shadow-md flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Smooth Ice Cream</span>
+</div>
+<div class="absolute bottom-4 left-6 bg-surface/90 backdrop-blur-md px-space-md py-space-xs rounded-full shadow-md flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Sugar Glaze Crust</span>
+</div>
+</div>
+<div class="p-space-sm flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Signature Artisan Recipe</p>
+<p class="font-title-md text-title-md text-primary font-bold">Gabin Es Krim</p>
+</div>
+<span class="px-space-md py-space-xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-bold">
+Rp 10.000 / pcs
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="w-full py-space-xl bg-surface-container-low scroll-mt-24" id="varian">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg">
+<div class="text-center max-w-2xl mx-auto mb-space-lg flex flex-col gap-space-xs">
+<span class="font-label-lg text-label-lg text-secondary font-bold uppercase tracking-wider">Katalog Showcase Esthio</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Pilih Sensasi Varian Favoritmu</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+Eksplorasi rasa artisanal kami di bawah ini. Pilih rasa untuk melihat profil sensasi dan tambahkan ke keranjang.
+</p>
+</div>
+
+<div class="flex flex-wrap items-center justify-center gap-space-xs md:gap-space-sm mb-space-lg">
+<button class="flavor-chip px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm bg-primary-container text-on-primary-container scale-105" id="chip-0" onclick="selectFlavor(0)">
+<span class="material-symbols-outlined text-[18px]">cookie</span>Cookies & Cream
+</button>
+<button class="flavor-chip px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" id="chip-1" onclick="selectFlavor(1)">
+<span class="material-symbols-outlined text-[18px]">cake</span>Chocolate
+</button>
+<button class="flavor-chip px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" id="chip-2" onclick="selectFlavor(2)">
+<span class="material-symbols-outlined text-[18px]">nutrition</span>Strawberry
+</button>
+<button class="flavor-chip px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" id="chip-3" onclick="selectFlavor(3)">
+<span class="material-symbols-outlined text-[18px]">local_cafe</span>Matcha
+</button>
+</div>
+
+<div class="bg-surface-container-lowest rounded-3xl p-space-md md:p-space-xl shadow-xl transition-all duration-300">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-md items-center">
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-2xl overflow-hidden aspect-square bg-primary-fixed/30 p-space-md flex items-center justify-center transition-colors duration-500" id="spotlightImageContainer">
+<img alt="Varian Gabin Es Krim Tape Esthio" class="w-full h-full object-cover rounded-xl shadow-md transition-all duration-300 transform" id="spotlightImage" src="cookies.jpeg">
+<div class="absolute top-4 left-4 px-space-md py-space-xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm font-label-sm text-label-sm font-bold text-primary flex items-center gap-1.5" id="flavorBadgeTag">
+<span class="material-symbols-outlined text-[18px]">cookie</span>
+<span>Crunch & Creamy Esthio</span>
+</div>
+<div class="absolute bottom-4 right-4 px-space-sm py-space-xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">scale</span>
+<span>110 gr / porsi</span>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded-2xl bg-secondary-fixed/40 flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">redeem</span>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant font-medium">
+<strong>Paket Box Hemat (Isi 5 atau 10):</strong> Sudah termasuk kotak thermal insulated & reusable ice gel.
+</p>
+</div>
+</div>
+
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-primary font-bold" id="flavorTitle">Cookies & Cream</h3>
+<p class="font-body-md text-body-md text-on-surface-variant font-medium" id="flavorTagline">Es krim vanilla lembut berpadu renyah remahan biskuit cookies hitam manis gurih</p>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Harga Satuan</span>
+<span class="font-headline-md text-headline-md text-secondary font-bold" id="flavorPrice">Rp 10.000</span>
+<span class="font-label-sm text-label-sm text-tertiary block font-semibold" id="flavorBoxPrice">Box 5 pcs: Rp 45.000</span>
+</div>
+</div>
+
+<p class="font-body-md text-body-md text-on-surface leading-relaxed" id="flavorDescription">Dibuat dengan es krim vanilla susu creamy berpadu butiran renyah biskuit cookies hitam manis gurih. Dijepit dengan keping gabin double-baked berkaramel khas Esthio yang menghasilkan sensasi tekstur garing lumer di mulut.</p>
+
+<div class="bg-surface-container-low p-space-md rounded-2xl flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Sensory Notes & Profil Rasa:</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold" id="flavorNotes">Notes: Creamy Vanilla, Crunchy Black Cookies, Buttery Cracker</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-32 font-body-sm text-body-sm text-on-surface-variant">Tingkat Manis</span>
+<div class="flex-1 bg-surface-container rounded-full h-2.5 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" id="meterSweet" style="width: 75%;"></div>
+</div>
+<span class="w-12 font-label-sm text-label-sm font-bold text-right text-on-surface" id="meterSweetText">7.5 / 10</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-32 font-body-sm text-body-sm text-on-surface-variant">Creamy Melt</span>
+<div class="flex-1 bg-surface-container rounded-full h-2.5 overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full transition-all duration-500" id="meterCreamy" style="width: 95%;"></div>
+</div>
+<span class="w-12 font-label-sm text-label-sm font-bold text-right text-on-surface" id="meterCreamyText">9.5 / 10</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-32 font-body-sm text-body-sm text-on-surface-variant">Kerenyahan Biskuit</span>
+<div class="flex-1 bg-surface-container rounded-full h-2.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" id="meterCrisp" style="width: 90%;"></div>
+</div>
+<span class="w-12 font-label-sm text-label-sm font-bold text-right text-on-surface" id="meterCrispText">9 / 10</span>
+</div>
+</div>
+
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<div class="inline-flex items-center rounded-full bg-surface-container p-1 shadow-sm">
+<button class="w-9 h-9 rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-lg active:scale-90 transition-transform" onclick="updateQty(-1)">–</button>
+<span class="px-space-md font-title-md text-title-md font-bold text-primary min-w-[40px] text-center" id="qtyCounter">1</span>
+<button class="w-9 h-9 rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface flex items-center justify-center font-bold text-lg active:scale-90 transition-transform" onclick="updateQty(1)">+</button>
+</div>
+<button class="flex-1 min-w-[220px] inline-flex items-center justify-center gap-space-sm px-space-lg py-space-sm rounded-full bg-primary text-on-primary font-label-lg text-label-lg font-bold shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95" onclick="addToCartFromSpotlight()">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+<span class="">Tambah ke Keranjang</span>
+<span class="ml-auto font-body-sm text-body-sm opacity-95" id="calculatedTotalBadge">(Rp 10.000)</span>
+</button>
+</div>
+
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span class="">Pemesanan ditangani langsung oleh Admin CS Esthio via WhatsApp Resmi (esthio.biz.id).</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="mt-space-xl" id="katalog-lengkap">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Katalog Lengkap Semua Varian</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Klik kartu rasa di bawah untuk memilih dan melihat detail lengkap.</p>
+</div>
+<span class="px-space-md py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm font-semibold text-primary">4 Pilihan Rasa</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm md:gap-space-md" id="catalogGrid">
+<!-- Will be populated by JavaScript -->
+</div>
+</div>
+</div>
+</section>
+
+<section class="w-full py-space-xl bg-surface" id="keunggulan">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg">
+<div class="text-center max-w-xl mx-auto mb-space-lg">
+<span class="font-label-lg text-label-lg text-secondary font-bold uppercase tracking-wider">Kualitas Bahan Premium</span>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold mt-1">Mengapa Esthio Berbeda?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-md">
+<div class="rounded-3xl bg-surface-container-lowest p-space-lg shadow-md hover:shadow-xl transition-all flex flex-col gap-space-sm group">
+<div class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">eco</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface font-bold">100% Tape Singkong Madu Asli</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+Tape singkong pilihan khas Jember dengan fermentasi alami tanpa pemanis buatan. Aroma tape manis madu berpadu segar tanpa bau alkohol yang menyengat.
+</p>
+<div class="mt-auto pt-space-sm flex items-center gap-1.5 text-tertiary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">check</span>
+Fermentasi Tradisional Higienis
+</div>
+</div>
+<div class="rounded-3xl bg-surface-container-lowest p-space-lg shadow-md hover:shadow-xl transition-all flex flex-col gap-space-sm group">
+<div class="w-14 h-14 rounded-2xl bg-secondary-fixed flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">cookie</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface font-bold">Gabin Double-Baked Renyah</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+Resep biskuit khusus double-baked dengan lapisan karamel gula halus yang tetap garing renyah walau bersentuhan dengan es krim beku hingga gigitan terakhir.
+</p>
+<div class="mt-auto pt-space-sm flex items-center gap-1.5 text-tertiary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">check</span>
+Teknologi Moisture Barrier Karamel
+</div>
+</div>
+<div class="rounded-3xl bg-surface-container-lowest p-space-lg shadow-md hover:shadow-xl transition-all flex flex-col gap-space-sm group">
+<div class="w-14 h-14 rounded-2xl bg-tertiary-fixed flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">icecream</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface font-bold">Es Krim Homemade Segar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+Dibuat fresh setiap batch dari susu sapi murni berpadu kelembutan sari tape dingin lumer di lidah. Bebas pengawet kimia berbahaya.
+</p>
+<div class="mt-auto pt-space-sm flex items-center gap-1.5 text-tertiary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">check</span>
+Susu Segar Peternak Lokal
+</div>
+</div>
+</div>
+<div class="mt-space-lg rounded-3xl bg-surface-container-high p-space-md md:p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface font-bold">Pengiriman Aman Rantai Dingin</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Setiap pengiriman menggunakan kemasan insulated box dan pendingin khusus agar sampai tetap beku sempurna.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md font-bold whitespace-nowrap">
+<span class="">Garansi Pengiriman Segar</span>
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="w-full py-space-xl bg-surface-container-low" id="lokasi">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg">
+<div class="rounded-3xl bg-surface-container-lowest p-space-lg md:p-space-xl shadow-lg border border-primary-fixed flex flex-col lg:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-xl">
+<span class="font-label-md text-label-md text-secondary font-bold uppercase">Pemesanan Langsung & Kemitraan</span>
+<h3 class="font-headline-lg text-headline-lg text-primary font-bold">Ingin Menikmati Esthio Hari Ini?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+Pemesanan dilakukan langsung secara cepat dan mudah via WhatsApp Resmi. CS kami siap membantu pilihan paket, perhitungan ongkir pengiriman beku, serta jadwal kirim tercepat.
+</p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs text-on-surface text-body-sm">
+<div class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[18px]">language</span>
+<span class="">esthio.biz.id</span>
+</div>
+<div class="flex items-center gap-1 font-semibold text-tertiary">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span class="">Admin Fast Response</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-sm w-full lg:w-auto">
+<button onclick="checkout()" class="w-full sm:w-auto inline-flex items-center justify-center gap-space-sm px-space-xl py-space-md rounded-full bg-[#25D366] text-white font-label-lg text-label-lg font-bold shadow-lg hover:bg-[#20ba59] transition-all active:scale-95">
+<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.777.818 2.789.818 3.18 0 5.767-2.587 5.767-5.766.001-3.182-2.585-5.804-5.765-5.804zm8.469 5.766c0 4.673-3.799 8.468-8.47 8.468-1.463 0-2.85-.38-4.06-1.047l-4.52 1.185 1.206-4.408c-.732-1.265-1.121-2.709-1.121-4.198 0-4.672 3.799-8.468 8.47-8.468 4.671 0 8.495 3.796 8.495 8.468z"></path></svg>
+<span class="">Chat CS WhatsApp: +62 812-3456-7890</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Reviews Section -->
+<section class="w-full py-space-xl bg-surface" id="reviews">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg">
+<div class="text-center max-w-2xl mx-auto mb-space-lg">
+<span class="font-label-lg text-label-lg text-secondary font-bold uppercase tracking-wider">Testimoni Pelanggan</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1">Apa Kata Mereka?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm">
+Review asli dari pelanggan yang sudah merasakan kelezatan Esthio
+</p>
+</div>
+
+<!-- Reviews Container -->
+<div id="reviewsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-md">
+<!-- Reviews will be loaded from JSON -->
+</div>
+
+<!-- Empty State -->
+<div id="emptyReviews" class="hidden text-center py-space-xl">
+<span class="material-symbols-outlined text-6xl text-on-surface-variant opacity-50 mb-space-sm">rate_review</span>
+<p class="font-title-lg text-title-lg text-on-surface-variant font-semibold">Belum ada review</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">Jadilah yang pertama memberikan testimoni!</p>
+</div>
+
+<!-- Review Stats Summary (if there are reviews) -->
+<div id="reviewStats" class="hidden mt-space-lg p-space-lg rounded-3xl bg-surface-container-lowest border border-outline-variant/30">
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col items-center">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-primary text-[32px] filled">star</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary font-bold" id="avgRating">0.0</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">dari <span id="totalReviews">0</span> review</p>
+</div>
+</div>
+<div class="flex-1 max-w-md">
+<div class="space-y-2" id="ratingBars">
+<!-- Rating bars will be generated here -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer class="w-full bg-surface-container-low mt-space-xl">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg py-space-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold">
+<span class="material-symbols-outlined text-[20px]">icecream</span>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Esthio</span>
+<span class="block text-xs font-semibold text-secondary">esthio.biz.id</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+Esthio - Gabin Es Krim Tape Artisan. Menghadirkan kelezatan otentik tape singkong fermentasi madu berbalut es krim lembut dan biskuit gabin renyah double-baked.
+</p>
+<div class="flex items-center gap-space-xs mt-space-sm">
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> 100% Bahan Alami
+</span>
+<span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">ac_unit</span> Rantai Dingin
+</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-title-lg text-title-lg text-on-surface font-bold">Varian Rasa Esthio</h3>
+<div class="flex flex-col gap-space-xs">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" onclick="selectFlavor(0)">Cookies & Cream</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" onclick="selectFlavor(1)">Chocolate</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" onclick="selectFlavor(2)">Strawberry</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" onclick="selectFlavor(3)">Matcha Green Tea</a>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-title-lg text-title-lg text-on-surface font-bold">Informasi & Layanan</h3>
+<div class="flex flex-col gap-space-xs">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#keunggulan">Tentang Kualitas Esthio</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#varian">Katalog Rasa & Paket Box</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#lokasi">Prosedur Pengiriman Beku</a>
+<span class="font-body-md text-body-md text-on-surface-variant">Domain Resmi: esthio.biz.id</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-title-lg text-title-lg text-on-surface font-bold">Pesan Langsung via WhatsApp</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Konsultasi pemesanan, hampers acara, atau kiriman luar kota dengan CS kami.</p>
+<button onclick="checkout()" class="mt-space-xs inline-flex items-center justify-center gap-space-sm px-space-lg py-space-sm rounded-full bg-[#25D366] text-white font-label-lg text-label-lg font-bold shadow-md hover:bg-[#20ba59] transition-all">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.777.818 2.789.818 3.18 0 5.767-2.587 5.767-5.766.001-3.182-2.585-5.804-5.765-5.804zm8.469 5.766c0 4.673-3.799 8.468-8.47 8.468-1.463 0-2.85-.38-4.06-1.047l-4.52 1.185 1.206-4.408c-.732-1.265-1.121-2.709-1.121-4.198 0-4.672 3.799-8.468 8.47-8.468 4.671 0 8.495 3.796 8.495 8.468z"></path></svg>
+<span class="">Chat CS WhatsApp</span>
+</button>
+</div>
+</div>
+<div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm border-t border-outline-variant/30">
+<p class="">© 2025 Esthio (esthio.biz.id) - Gabin Es Krim Tape Artisan. Seluruh hak cipta dilindungi.</p>
+<div class="flex items-center gap-space-md">
+<span class="">Sistem Katalog & Pemesanan Direct WhatsApp</span>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+const flavorData = [
+  {
+    name: "Cookies & Cream",
+    shortName: "Cookies & Cream",
+    tagline: "Es krim vanilla lembut berpadu renyah remahan biskuit cookies hitam manis gurih",
+    description: "Dibuat dengan es krim vanilla susu creamy berpadu butiran renyah biskuit cookies hitam manis gurih. Dijepit dengan keping gabin double-baked berkaramel khas Esthio yang menghasilkan sensasi tekstur garing lumer di mulut.",
+    price: 10000,
+    boxPrice: "Box 5 pcs: Rp 45.000",
+    notes: "Notes: Creamy Vanilla, Crunchy Black Cookies, Buttery Cracker",
+    sweet: 7.5,
+    creamy: 9.5,
+    crisp: 9,
+    badge: '<span class="material-symbols-outlined text-[18px]">cookie</span><span>Crunch & Creamy Esthio</span>',
+    icon: "cookie",
+    image: "cookies.jpeg",
+    activeColor: "bg-primary-container text-on-primary-container",
+    bgColor: "bg-primary-fixed/30"
+  },
+  {
+    name: "Chocolate",
+    shortName: "Chocolate",
+    tagline: "Es krim dark chocolate Belgia pekat dengan kelembutan premium",
+    description: "Kombinasi mewah cokelat Belgia berkualitas tinggi yang kaya rasa dan lelehan selai cokelat pekat di tengah es krim lembut. Rasa legit manis-pahit yang elegan di setiap gigitan dengan sensasi melt in mouth.",
+    price: 10000,
+    boxPrice: "Box 5 pcs: Rp 45.000",
+    notes: "Notes: Belgian Dark Cocoa 54%, Fudge, Rich & Creamy",
+    sweet: 7.5,
+    creamy: 9.8,
+    crisp: 9,
+    badge: '<span class="material-symbols-outlined text-[18px]">cake</span><span>Cokelat Belgia Premium</span>',
+    icon: "cake",
+    image: "coklat.png",
+    activeColor: "bg-secondary text-on-secondary",
+    bgColor: "bg-secondary-fixed/30"
+  },
+  {
+    name: "Strawberry",
+    shortName: "Strawberry",
+    tagline: "Asam manis fruity swirl stroberi segar pegunungan yang dingin ceria",
+    description: "Dibuat dari buah stroberi alami yang diolah menjadi swirl asam manis alami, memberikan ledakan kesegaran buah asli di tengah biskuit gabin emas yang super garing. Sensasi fruity yang menyegarkan di setiap gigitan.",
+    price: 10000,
+    boxPrice: "Box 5 pcs: Rp 45.000",
+    notes: "Notes: Fresh Highland Strawberry, Berry Swirl, Crisp Sugar",
+    sweet: 7.2,
+    creamy: 9.0,
+    crisp: 9,
+    badge: '<span class="material-symbols-outlined text-[18px]">nutrition</span><span>Buah Segar Alami</span>',
+    icon: "nutrition",
+    image: "strawberry.jpeg",
+    activeColor: "bg-error text-on-error",
+    bgColor: "bg-error-container/30"
+  },
+  {
+    name: "Matcha Green Tea",
+    shortName: "Matcha",
+    tagline: "Matcha otentik Kyoto Jepang dengan rasa teh hijau harum menenangkan",
+    description: "Serbuk matcha berkualitas dari perkebunan Kyoto berpadu selaras dengan es krim lembut premium. Gurih, sedikit sepat elegan, dan sangat menyegarkan dengan aroma khas matcha ceremonial grade.",
+    price: 10000,
+    boxPrice: "Box 5 pcs: Rp 45.000",
+    notes: "Notes: Kyoto Matcha, Umami Herbal, Velvety Cream",
+    sweet: 6,
+    creamy: 9.2,
+    crisp: 9.5,
+    badge: '<span class="material-symbols-outlined text-[18px]">local_cafe</span><span>Kyoto Ceremonial Grade</span>',
+    icon: "local_cafe",
+    image: "matcha.png",
+    activeColor: "bg-tertiary text-on-tertiary",
+    bgColor: "bg-tertiary-fixed/30"
+  }
+];
+
+let cart = [];
+let currentFlavorIdx = 0;
+let currentQty = 1;
+
+function formatIDR(amount) {
+  return "Rp " + amount.toLocaleString("id-ID");
+}
+
+function selectFlavor(index) {
+  currentFlavorIdx = index;
+  const item = flavorData[index];
+  
+  document.querySelectorAll('.flavor-chip').forEach((chip, i) => {
+    chip.className = "flavor-chip px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm " + 
+      (i === index ? (item.activeColor + " scale-105") : "bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container");
+  });
+  
+  document.getElementById("flavorTitle").innerText = item.name;
+  document.getElementById("flavorTagline").innerText = item.tagline;
+  document.getElementById("flavorDescription").innerText = item.description;
+  document.getElementById("flavorPrice").innerText = formatIDR(item.price);
+  document.getElementById("flavorBoxPrice").innerText = item.boxPrice;
+  document.getElementById("flavorBadgeTag").innerHTML = '<span class="material-symbols-outlined text-[18px]">' + (item.icon === 'cookie' ? 'cookie' : item.icon === 'cake' ? 'cake' : item.icon === 'nutrition' ? 'nutrition' : 'local_cafe') + '</span><span>' + (item.icon === 'cookie' ? 'Crunch & Creamy Esthio' : item.icon === 'cake' ? 'Cokelat Belgia Premium' : item.icon === 'nutrition' ? 'Buah Segar Alami' : 'Kyoto Ceremonial Grade') + '</span>';
+  document.getElementById("flavorNotes").innerText = item.notes;
+  
+  // Update spotlight image
+  document.getElementById("spotlightImage").src = item.image;
+  
+  document.getElementById("meterSweet").style.width = (item.sweet * 10) + "%";
+  document.getElementById("meterSweetText").innerText = item.sweet + " / 10";
+  document.getElementById("meterCreamy").style.width = (item.creamy * 10) + "%";
+  document.getElementById("meterCreamyText").innerText = item.creamy + " / 10";
+  document.getElementById("meterCrisp").style.width = (item.crisp * 10) + "%";
+  document.getElementById("meterCrispText").innerText = item.crisp + " / 10";
+  
+  const container = document.getElementById("spotlightImageContainer");
+  container.className = "relative rounded-2xl overflow-hidden aspect-square p-space-md flex items-center justify-center transition-colors duration-500 " + item.bgColor;
+  
+  updateLiveCalculations();
+}
+
+function updateQty(delta) {
+  currentQty = Math.max(1, currentQty + delta);
+  document.getElementById("qtyCounter").innerText = currentQty;
+  updateLiveCalculations();
+}
+
+function updateLiveCalculations() {
+  const item = flavorData[currentFlavorIdx];
+  const total = item.price * currentQty;
+  document.getElementById("calculatedTotalBadge").innerText = "(" + formatIDR(total) + ")";
+}
+
+function addToCartFromSpotlight() {
+  const item = flavorData[currentFlavorIdx];
+  const existingItem = cart.find(i => i.id === currentFlavorIdx);
+  
+  if (existingItem) {
+    existingItem.quantity += currentQty;
+  } else {
+    cart.push({
+      id: currentFlavorIdx,
+      name: item.name,
+      price: item.price,
+      quantity: currentQty,
+      icon: item.icon
+    });
+  }
+  
+  currentQty = 1;
+  document.getElementById("qtyCounter").innerText = "1";
+  
+  updateCartUI();
+  saveCartToStorage();
+  
+  const badge = document.getElementById('cartCount');
+  badge.classList.add('cart-bounce');
+  setTimeout(() => badge.classList.remove('cart-bounce'), 300);
+  
+  toggleCart();
+}
+
+function updateCartUI() {
+  const cartCount = document.getElementById('cartCount');
+  const cartItemsContainer = document.getElementById('cartItemsContainer');
+  const emptyMessage = document.getElementById('emptyCartMessage');
+  const cartFooter = document.getElementById('cartFooter');
+  const cartTotal = document.getElementById('cartTotal');
+  
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  
+  cartCount.textContent = totalItems;
+  cartTotal.textContent = formatIDR(totalPrice);
+  
+  if (cart.length === 0) {
+    emptyMessage.classList.remove('hidden');
+    cartFooter.classList.add('hidden');
+    return;
+  }
+  
+  emptyMessage.classList.add('hidden');
+  cartFooter.classList.remove('hidden');
+  
+  cartItemsContainer.innerHTML = cart.map(item => `
+    <div class="flex items-center gap-space-sm p-space-sm bg-surface-container-lowest rounded-2xl mb-space-sm shadow-sm">
+      <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-primary text-[24px]">${item.icon}</span>
+      </div>
+      <div class="flex-1 min-w-0">
+        <h4 class="font-title-md text-title-md text-on-surface font-bold truncate">${item.name}</h4>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">${formatIDR(item.price)} × ${item.quantity}</p>
+      </div>
+      <div class="flex flex-col items-end gap-space-xs">
+        <span class="font-title-md text-title-md text-primary font-bold whitespace-nowrap">${formatIDR(item.price * item.quantity)}</span>
+        <div class="inline-flex items-center gap-1 bg-surface-container px-2 py-1 rounded-full">
+          <button onclick="changeCartItemQty(${item.id}, -1)" class="w-6 h-6 rounded-full bg-surface-container-high hover:bg-surface-container-highest flex items-center justify-center transition-colors text-xs font-bold">-</button>
+          <span class="min-w-[20px] text-center font-label-sm text-label-sm font-bold">${item.quantity}</span>
+          <button onclick="changeCartItemQty(${item.id}, 1)" class="w-6 h-6 rounded-full bg-surface-container-high hover:bg-surface-container-highest flex items-center justify-center transition-colors text-xs font-bold">+</button>
+        </div>
+      </div>
+      <button onclick="removeFromCart(${item.id})" class="w-8 h-8 rounded-full hover:bg-error-container flex items-center justify-center transition-colors flex-shrink-0">
+        <span class="material-symbols-outlined text-error text-[20px]">delete</span>
+      </button>
+    </div>
+  `).join('');
+}
+
+function changeCartItemQty(productId, delta) {
+  const item = cart.find(i => i.id === productId);
+  if (item) {
+    item.quantity += delta;
+    if (item.quantity <= 0) {
+      removeFromCart(productId);
+    } else {
+      updateCartUI();
+      saveCartToStorage();
+    }
+  }
+}
+
+function removeFromCart(productId) {
+  cart = cart.filter(item => item.id !== productId);
+  updateCartUI();
+  saveCartToStorage();
+}
+
+function clearCart() {
+  if (confirm('Yakin ingin mengosongkan keranjang?')) {
+    cart = [];
+    updateCartUI();
+    saveCartToStorage();
+  }
+}
+
+function toggleCart() {
+  const sidebar = document.getElementById('cartSidebar');
+  const overlay = document.getElementById('cartOverlay');
+  
+  sidebar.classList.toggle('cart-open');
+  overlay.classList.toggle('overlay-visible');
+  document.body.style.overflow = sidebar.classList.contains('cart-open') ? 'hidden' : '';
+}
+
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('hidden');
+}
+
+function checkout() {
+  if (cart.length === 0) {
+    alert('Keranjang belanja kosong!');
+    return;
+  }
+  
+  const phone = "6281234567890";
+  const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  
+  let message = "Halo CS Esthio! 👋\n";
+  message += "Saya ingin memesan dari katalog https://esthio.biz.id :\n\n";
+  message += "*Detail Pesanan:*\n";
+  
+  cart.forEach((item, index) => {
+    const iconName = item.icon === 'cookie' ? '🍪' : item.icon === 'cake' ? '🍫' : item.icon === 'nutrition' ? '🍓' : '🍵';
+    message += `${index + 1}. ${iconName} ${item.name}\n`;
+    message += `   ${item.quantity} pcs × ${formatIDR(item.price)} = ${formatIDR(item.price * item.quantity)}\n\n`;
+  });
+  
+  message += `*Total: ${formatIDR(totalPrice)}*\n\n`;
+  message += "Mohon info ketersediaan stok dan biaya ongkir ke alamat saya. Terima kasih! 🙏";
+  
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+function saveCartToStorage() {
+  localStorage.setItem('esthio_cart', JSON.stringify(cart));
+}
+
+function loadCartFromStorage() {
+  const saved = localStorage.getItem('esthio_cart');
+  if (saved) {
+    try {
+      cart = JSON.parse(saved);
+    } catch (e) {
+      cart = [];
+    }
+  }
+}
+
+function renderCatalogGrid() {
+  const grid = document.getElementById('catalogGrid');
+  grid.innerHTML = flavorData.map((item, index) => `
+    <div class="rounded-2xl bg-surface-container-lowest p-space-sm shadow-sm hover:shadow-md transition-all cursor-pointer border border-transparent hover:border-primary-container" onclick="selectFlavor(${index})">
+      <div class="aspect-square rounded-xl overflow-hidden ${item.bgColor} mb-space-xs">
+        <img alt="${item.name}" class="w-full h-full object-cover" src="${item.image}">
+      </div>
+      <span class="font-label-sm text-label-sm text-secondary font-bold">${item.name}</span>
+      <p class="font-title-md text-title-md text-primary font-bold">${formatIDR(item.price)}</p>
+      <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">${item.tagline}</p>
+    </div>
+  `).join('');
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  selectFlavor(0);
+  loadCartFromStorage();
+  updateCartUI();
+  renderCatalogGrid();
+  loadReviews();
+});
+
+document.addEventListener('click', function(e) {
+  const menu = document.getElementById('mobileMenu');
+  const menuButton = e.target.closest('button[onclick="toggleMobileMenu()"]');
+  
+  if (!menu.contains(e.target) && !menuButton && !menu.classList.contains('hidden')) {
+    menu.classList.add('hidden');
+  }
+});
+
+// Load and Display Reviews from JSON
+async function loadReviews() {
+  try {
+    const response = await fetch('reviews.json');
+    const data = await response.json();
+    const reviews = data.reviews || [];
+    
+    const container = document.getElementById('reviewsContainer');
+    const emptyState = document.getElementById('emptyReviews');
+    const statsSection = document.getElementById('reviewStats');
+    
+    if (reviews.length === 0) {
+      emptyState.classList.remove('hidden');
+      statsSection.classList.add('hidden');
+      return;
+    }
+    
+    emptyState.classList.add('hidden');
+    statsSection.classList.remove('hidden');
+    
+    // Render reviews
+    container.innerHTML = reviews.map(review => {
+      const stars = generateStars(review.rating);
+      const date = new Date(review.date).toLocaleDateString('id-ID', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      
+      return `
+        <div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-md hover:shadow-lg transition-all border border-outline-variant/20">
+          <div class="flex items-start justify-between mb-space-sm">
+            <div class="flex-1">
+              <h4 class="font-title-lg text-title-lg text-on-surface font-bold">${escapeHtml(review.name)}</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">${date}</p>
+            </div>
+            ${review.verified ? '<span class="material-symbols-outlined text-tertiary text-[20px] ml-2" title="Pembeli Terverifikasi">verified</span>' : ''}
+          </div>
+          <div class="flex items-center gap-1 mb-space-sm">
+            ${stars}
+          </div>
+          ${review.variant ? `<p class="font-body-sm text-body-sm text-primary font-semibold mb-space-xs">Varian: ${escapeHtml(review.variant)}</p>` : ''}
+          <p class="font-body-md text-body-md text-on-surface leading-relaxed">${escapeHtml(review.comment)}</p>
+        </div>
+      `;
+    }).join('');
+    
+    // Calculate and display stats
+    displayReviewStats(reviews);
+    
+  } catch (error) {
+    console.error('Error loading reviews:', error);
+    document.getElementById('emptyReviews').classList.remove('hidden');
+  }
+}
+
+function generateStars(rating) {
+  let stars = '';
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      stars += '<span class="material-symbols-outlined text-primary text-[20px] filled">star</span>';
+    } else {
+      stars += '<span class="material-symbols-outlined text-on-surface-variant text-[20px]">star</span>';
+    }
+  }
+  return stars;
+}
+
+function displayReviewStats(reviews) {
+  const totalReviews = reviews.length;
+  const avgRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / totalReviews).toFixed(1);
+  
+  document.getElementById('avgRating').textContent = avgRating;
+  document.getElementById('totalReviews').textContent = totalReviews;
+  
+  // Calculate rating distribution
+  const distribution = [5, 4, 3, 2, 1].map(star => {
+    const count = reviews.filter(r => r.rating === star).length;
+    const percentage = (count / totalReviews * 100).toFixed(0);
+    return { star, count, percentage };
+  });
+  
+  const barsContainer = document.getElementById('ratingBars');
+  barsContainer.innerHTML = distribution.map(d => `
+    <div class="flex items-center gap-space-sm">
+      <span class="font-body-sm text-body-sm text-on-surface-variant w-8">${d.star} ★</span>
+      <div class="flex-1 bg-surface-container rounded-full h-2 overflow-hidden">
+        <div class="bg-primary h-full rounded-full transition-all duration-500" style="width: ${d.percentage}%"></div>
+      </div>
+      <span class="font-body-sm text-body-sm text-on-surface-variant w-12 text-right">${d.count}</span>
+    </div>
+  `).join('');
+}
+
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, m => map[m]);
+}
+
+</script>
+
+</body>
+</html>
