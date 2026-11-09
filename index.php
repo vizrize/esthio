@@ -150,7 +150,7 @@ Sensasi Renyah & <br class="hidden sm:inline">
 <span class="text-secondary underline decoration-primary-container decoration-wavy decoration-2">Cold Melt</span> di Mulut!
 </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-Perpaduan legendaris keping biskuit gabin gurih berkaramel renyah dengan isian <strong class="text-primary font-bold">ice cream tape singkong fermentasi madu alami</strong> khas Esthio yang lembut, creamy, dan dingin menyegarkan.
+Perpaduan legendaris keping biskuit gabin gurih berkaramel renyah dengan isian <strong class="text-primary font-bold">ice cream aneka rasa</strong> khas Esthio yang lembut, creamy, dan dingin menyegarkan.
 </p>
 <div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
 <a class="inline-flex items-center justify-center gap-space-xs px-space-xl py-space-md rounded-full bg-[#25D366] text-white font-label-lg text-label-lg font-bold shadow-lg hover:bg-[#20ba59] transition-all active:scale-95 group" href="#varian">
@@ -182,7 +182,7 @@ Perpaduan legendaris keping biskuit gabin gurih berkaramel renyah dengan isian <
 <div class="absolute -inset-4 bg-primary-fixed/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 <div class="relative rounded-3xl bg-surface-container-lowest p-space-sm shadow-xl w-full max-w-md group">
 <div class="relative overflow-hidden rounded-2xl bg-surface-container aspect-square">
-<img alt="Esthio Gabin Es Krim Tape - Semua Varian" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out" src="alvarian.jpg">
+<img alt="Esthio Gabin Es Krim - Semua Varian" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out" src="alvarian.jpg">
 <div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-md px-space-md py-space-xs rounded-full shadow-md flex items-center gap-1.5 animate-bounce" style="animation-duration: 3s;">
 <span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
 <span class="font-label-sm text-label-sm font-bold text-on-surface">Crunchy Gabin Top</span>
@@ -240,7 +240,7 @@ Eksplorasi rasa artisanal kami di bawah ini. Pilih rasa untuk melihat profil sen
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-md items-center">
 <div class="lg:col-span-5 relative">
 <div class="relative rounded-2xl overflow-hidden aspect-square bg-primary-fixed/30 p-space-md flex items-center justify-center transition-colors duration-500" id="spotlightImageContainer">
-<img alt="Varian Gabin Es Krim Tape Esthio" class="w-full h-full object-cover rounded-xl shadow-md transition-all duration-300 transform" id="spotlightImage" src="cookies.jpeg">
+<img alt="Varian Gabin Es Krim Esthio" class="w-full h-full object-cover rounded-xl shadow-md transition-all duration-300 transform" id="spotlightImage" src="cookies.jpeg">
 <div class="absolute top-4 left-4 px-space-md py-space-xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm font-label-sm text-label-sm font-bold text-primary flex items-center gap-1.5" id="flavorBadgeTag">
 <span class="material-symbols-outlined text-[18px]">cookie</span>
 <span>Crunch & Creamy Esthio</span>
@@ -343,20 +343,7 @@ Eksplorasi rasa artisanal kami di bawah ini. Pilih rasa untuk melihat profil sen
 <span class="font-label-lg text-label-lg text-secondary font-bold uppercase tracking-wider">Kualitas Bahan Premium</span>
 <h2 class="font-headline-lg text-headline-lg text-primary font-bold mt-1">Mengapa Esthio Berbeda?</h2>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-md">
-<div class="rounded-3xl bg-surface-container-lowest p-space-lg shadow-md hover:shadow-xl transition-all flex flex-col gap-space-sm group">
-<div class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[32px]">eco</span>
-</div>
-<h3 class="font-title-lg text-title-lg text-on-surface font-bold">100% Tape Singkong Madu Asli</h3>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-Tape singkong pilihan khas Jember dengan fermentasi alami tanpa pemanis buatan. Aroma tape manis madu berpadu segar tanpa bau alkohol yang menyengat.
-</p>
-<div class="mt-auto pt-space-sm flex items-center gap-1.5 text-tertiary font-label-sm text-label-sm font-bold">
-<span class="material-symbols-outlined text-[16px]">check</span>
-Fermentasi Tradisional Higienis
-</div>
-</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-md">
 <div class="rounded-3xl bg-surface-container-lowest p-space-lg shadow-md hover:shadow-xl transition-all flex flex-col gap-space-sm group">
 <div class="w-14 h-14 rounded-2xl bg-secondary-fixed flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined text-[32px]">cookie</span>
@@ -376,7 +363,7 @@ Teknologi Moisture Barrier Karamel
 </div>
 <h3 class="font-title-lg text-title-lg text-on-surface font-bold">Es Krim Homemade Segar</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-Dibuat fresh setiap batch dari susu sapi murni berpadu kelembutan sari tape dingin lumer di lidah. Bebas pengawet kimia berbahaya.
+Dibuat fresh setiap batch dari susu sapi murni, lembut dan dingin lumer di lidah. Bebas pengawet kimia berbahaya.
 </p>
 <div class="mt-auto pt-space-sm flex items-center gap-1.5 text-tertiary font-label-sm text-label-sm font-bold">
 <span class="material-symbols-outlined text-[16px]">check</span>
@@ -425,7 +412,7 @@ Pemesanan dilakukan langsung secara cepat dan mudah via WhatsApp Resmi. CS kami 
 <div class="flex flex-col sm:flex-row items-center gap-space-sm w-full lg:w-auto">
 <button onclick="checkout()" class="w-full sm:w-auto inline-flex items-center justify-center gap-space-sm px-space-xl py-space-md rounded-full bg-[#25D366] text-white font-label-lg text-label-lg font-bold shadow-lg hover:bg-[#20ba59] transition-all active:scale-95">
 <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.777.818 2.789.818 3.18 0 5.767-2.587 5.767-5.766.001-3.182-2.585-5.804-5.765-5.804zm8.469 5.766c0 4.673-3.799 8.468-8.47 8.468-1.463 0-2.85-.38-4.06-1.047l-4.52 1.185 1.206-4.408c-.732-1.265-1.121-2.709-1.121-4.198 0-4.672 3.799-8.468 8.47-8.468 4.671 0 8.495 3.796 8.495 8.468z"></path></svg>
-<span class="">Chat CS WhatsApp: +62 812-3456-7890</span>
+<span class="">Chat CS WhatsApp: +62 896-0849-2666</span>
 </button>
 </div>
 </div>
@@ -563,7 +550,7 @@ Review asli dari pelanggan yang sudah merasakan kelezatan Esthio
 </div>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
-Esthio - Gabin Es Krim Tape Artisan. Menghadirkan kelezatan otentik tape singkong fermentasi madu berbalut es krim lembut dan biskuit gabin renyah double-baked.
+Esthio - Gabin Es Krim Artisan. Menghadirkan kelezatan otentik es krim lembut dan biskuit gabin renyah double-baked.
 </p>
 <div class="flex items-center gap-space-xs mt-space-sm">
 <span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-tertiary font-bold flex items-center gap-1">
@@ -602,7 +589,7 @@ Esthio - Gabin Es Krim Tape Artisan. Menghadirkan kelezatan otentik tape singkon
 </div>
 </div>
 <div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm border-t border-outline-variant/30">
-<p class="">© 2025 Esthio (esthio.biz.id) - Gabin Es Krim Tape Artisan. Seluruh hak cipta dilindungi.</p>
+<p class="">© 2025 Esthio (esthio.biz.id) - Gabin Es Krim Artisan. Seluruh hak cipta dilindungi.</p>
 <div class="flex items-center gap-space-md">
 <span class="">Sistem Katalog & Pemesanan Direct WhatsApp</span>
 </div>
@@ -851,29 +838,65 @@ function toggleMobileMenu() {
   menu.classList.toggle('hidden');
 }
 
-function checkout() {
-  if (cart.length === 0) {
-    alert('Keranjang belanja kosong!');
-    return;
-  }
-  
-  const phone = "6281234567890";
-  const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  
-  let message = "Halo CS Esthio! 👋\n";
-  message += "Saya ingin memesan dari katalog https://esthio.biz.id :\n\n";
-  message += "*Detail Pesanan:*\n";
-  
+const WA_PHONE = "6289608492666"; // 0896-0849-2666 (format internasional tanpa +)
+
+function buildWhatsAppMessage() {
+  const line = "------------------------";
+  const lines = [];
+
+  lines.push("*PESANAN BARU - ESTHIO*");
+  lines.push(line);
+  lines.push("");
+  lines.push("Halo Admin Esthio 👋");
+  lines.push("Saya ingin memesan dari katalog esthio.biz.id:");
+  lines.push("");
+  lines.push("*Detail Pesanan*");
+
+  let totalQty = 0;
+  let totalPrice = 0;
+
   cart.forEach((item, index) => {
-    const iconName = item.icon === 'cookie' ? '🍪' : item.icon === 'cake' ? '🍫' : item.icon === 'nutrition' ? '🍓' : '🍵';
-    message += `${index + 1}. ${iconName} ${item.name}\n`;
-    message += `   ${item.quantity} pcs × ${formatIDR(item.price)} = ${formatIDR(item.price * item.quantity)}\n\n`;
+    const subtotal = item.price * item.quantity;
+    totalQty += item.quantity;
+    totalPrice += subtotal;
+    lines.push(`${index + 1}. ${item.name}`);
+    lines.push(`    ${item.quantity} pcs x ${formatIDR(item.price)} = ${formatIDR(subtotal)}`);
   });
-  
-  message += `*Total: ${formatIDR(totalPrice)}*\n\n`;
-  message += "Mohon info ketersediaan stok dan biaya ongkir ke alamat saya. Terima kasih! 🙏";
-  
-  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+
+  lines.push("");
+  lines.push(line);
+  lines.push(`*Total: ${formatIDR(totalPrice)}* (${totalQty} pcs)`);
+  lines.push("_Belum termasuk ongkir_");
+  lines.push(line);
+  lines.push("");
+  lines.push("*Data Pengiriman*");
+  lines.push("Nama     : ");
+  lines.push("Alamat   : ");
+  lines.push("No. HP   : ");
+  lines.push("");
+  lines.push("Mohon info ketersediaan stok dan biaya ongkir ke alamat saya. Terima kasih 🙏");
+
+  return lines.join("\n");
+}
+
+function checkout() {
+  let message;
+
+  if (cart.length === 0) {
+    // Tombol "Chat CS WhatsApp" saat keranjang masih kosong: kirim sapaan rapi
+    message = [
+      "*HALO ESTHIO*",
+      "",
+      "Halo Admin Esthio 👋",
+      "Saya melihat katalog di esthio.biz.id dan ingin bertanya / memesan.",
+      "",
+      "Terima kasih 🙏"
+    ].join("\n");
+  } else {
+    message = buildWhatsAppMessage();
+  }
+
+  window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(message)}`, '_blank');
 }
 
 function saveCartToStorage() {
