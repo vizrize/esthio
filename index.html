@@ -1114,7 +1114,6 @@ function buildWhatsAppMessage() {
     lines.push(`Promo Beli ${PROMO_QTY} ${formatIDR(PROMO_PRICE)} (${t.pairs}x) : -${formatIDR(t.discount)}`);
   }
   lines.push(`*Total: ${formatIDR(t.total)}* (${t.totalQty} pcs)`);
-  lines.push("_Belum termasuk ongkir_");
   lines.push(line);
   lines.push("");
   lines.push("*Data Pengiriman*");
@@ -1122,7 +1121,7 @@ function buildWhatsAppMessage() {
   lines.push("Alamat   : ");
   lines.push("No. HP   : ");
   lines.push("");
-  lines.push("Mohon info ketersediaan stok dan biaya ongkir ke alamat saya. Terima kasih 🙏");
+  lines.push("Mohon info ketersediaan stok. Terima kasih 🙏");
 
   return lines.join("\n");
 }
