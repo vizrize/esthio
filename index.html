@@ -722,6 +722,66 @@ function updateLiveCalculations() {
   document.getElementById("calculatedTotalBadge").innerText = "(" + formatIDR(total) + ")";
 }
 
+// ===== Feedback saat tambah ke keranjang: suara lucu + getar (haptic) =====
+const CART_SOUND_ENABLED = true;   // ubah ke false untuk mematikan suara
+const CART_HAPTIC_ENABLED = true;  // ubah ke false untuk mematikan getar
+
+let cartAudioCtx = null;
+
+function playCartSound() {
+  if (!CART_SOUND_ENABLED) return;
+  try {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    if (!cartAudioCtx) cartAudioCtx = new AC();
+    if (cartAudioCtx.state === 'suspended') cartAudioCtx.resume();
+
+    const t0 = cartAudioCtx.currentTime;
+    // Dua nada "bloop-ding" yang meluncur naik, seperti suara kartun
+    [[520, 780, 0], [780, 1170, 0.09]].forEach(([from, to, delay]) => {
+      const osc = cartAudioCtx.createOscillator();
+      const gain = cartAudioCtx.createGain();
+      const start = t0 + delay;
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(from, start);
+      osc.frequency.exponentialRampToValueAtTime(to, start + 0.09);
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(0.18, start + 0.015);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.16);
+      osc.connect(gain);
+      gain.connect(cartAudioCtx.destination);
+      osc.start(start);
+      osc.stop(start + 0.18);
+    });
+  } catch (e) {}
+}
+
+function triggerHaptic() {
+  if (!CART_HAPTIC_ENABLED) return;
+  try {
+    if (navigator.vibrate) {            // Android (Chrome / Firefox)
+      navigator.vibrate([12, 30, 18]);
+      return;
+    }
+    // iPhone (Safari 17.4+): toggle switch tersembunyi menghasilkan getaran halus
+    const label = document.createElement('label');
+    label.setAttribute('aria-hidden', 'true');
+    label.style.display = 'none';
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.setAttribute('switch', '');
+    label.appendChild(input);
+    document.head.appendChild(label);
+    label.click();
+    setTimeout(() => label.remove(), 100);
+  } catch (e) {}
+}
+
+function playAddToCartFeedback() {
+  playCartSound();
+  triggerHaptic();
+}
+
 function addToCartFromSpotlight() {
   const item = flavorData[currentFlavorIdx];
   const existingItem = cart.find(i => i.id === currentFlavorIdx);
@@ -744,6 +804,8 @@ function addToCartFromSpotlight() {
   updateCartUI();
   saveCartToStorage();
   
+  playAddToCartFeedback();
+
   const badge = document.getElementById('cartCount');
   badge.classList.add('cart-bounce');
   setTimeout(() => badge.classList.remove('cart-bounce'), 300);
