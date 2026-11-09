@@ -44,6 +44,82 @@
   opacity: 1 !important;
   pointer-events: auto !important;
 }
+
+html { scroll-behavior: smooth; }
+
+/* ===== Navigasi kaca (glass) saat di-scroll ===== */
+.site-header {
+  isolation: isolate;
+  background: rgba(255, 248, 242, 0.82);
+  -webkit-backdrop-filter: blur(8px) saturate(1.15);
+  backdrop-filter: blur(8px) saturate(1.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  box-shadow: 0 0 0 rgba(120, 53, 15, 0);
+  transition: background-color .4s ease, -webkit-backdrop-filter .4s ease, backdrop-filter .4s ease,
+              border-color .4s ease, box-shadow .4s ease;
+}
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.35) 0%, rgba(255,255,255,.04) 100%);
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+.site-header.is-scrolled {
+  background: rgba(255, 248, 242, 0.46);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  backdrop-filter: blur(20px) saturate(1.8);
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 30px rgba(120, 53, 15, 0.10);
+}
+.site-header.is-scrolled::before { opacity: 1; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .site-header.is-scrolled { background: rgba(255, 248, 242, 0.94); }
+}
+
+/* ===== Animasi muncul saat scroll ===== */
+.reveal-ready .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1), filter .8s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal-ready .reveal.reveal-zoom { transform: translateY(30px) scale(.94); }
+.reveal-ready .reveal.reveal-blur { filter: blur(8px); }
+.reveal-ready .reveal.reveal-in { opacity: 1; transform: none; filter: none; }
+
+/* Judul hero: terbuka dari kiri ke kanan */
+.reveal-ready .reveal-wipe {
+  clip-path: inset(-20% 100% -30% -5%);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: clip-path 1s cubic-bezier(.65,0,.35,1), opacity .6s ease, transform 1s cubic-bezier(.22,.61,.36,1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal-ready .reveal-wipe.reveal-in {
+  clip-path: inset(-20% -5% -30% -5%);
+  opacity: 1;
+  transform: none;
+}
+
+/* Judul section: muncul per kata */
+.reveal-ready .split-words .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(.65em) rotate(3deg);
+  filter: blur(5px);
+  transition: opacity .7s ease, transform .8s cubic-bezier(.22,.61,.36,1), filter .7s ease;
+  transition-delay: calc(var(--reveal-delay, 0ms) + var(--i, 0) * 60ms);
+}
+.reveal-ready .split-words.reveal-in .word { opacity: 1; transform: none; filter: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 </style>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-container": "#76340e", "surface": "#fff8f2", "error-container": "#ffdad6", "surface-container-lowest": "#ffffff", "on-primary-fixed": "#2a1700", "surface-container-high": "#f1e7db", "surface-dim": "#e2d9cd", "tertiary-fixed": "#85f8c4", "on-secondary": "#ffffff", "secondary-fixed-dim": "#ffb693", "surface-container-low": "#fcf2e6", "surface-tint": "#855300", "inverse-on-surface": "#f9efe3", "surface-container": "#f6ece0", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#005137", "inverse-surface": "#353028", "secondary-fixed": "#ffdbcc", "surface-container-highest": "#ebe1d5", "tertiary-container": "#50c594", "on-tertiary": "#ffffff", "outline": "#867461", "surface-variant": "#ebe1d5", "secondary-container": "#fd9e70", "on-tertiary-container": "#004e35", "on-primary-container": "#613b00", "on-error": "#ffffff", "on-error-container": "#93000a", "surface-bright": "#fff8f2", "on-primary-fixed-variant": "#653e00", "inverse-primary": "#ffb95f", "outline-variant": "#d8c3ad", "primary-fixed": "#ffddb8", "on-background": "#1f1b14", "on-primary": "#ffffff", "background": "#fff8f2", "on-surface-variant": "#534434", "primary-container": "#f59e0b", "tertiary-fixed-dim": "#68dba9", "primary-fixed-dim": "#ffb95f", "on-surface": "#1f1b14", "on-secondary-fixed": "#351000", "on-tertiary-fixed": "#002114", "secondary": "#944a23", "primary": "#855300", "tertiary": "#006c4a", "on-secondary-fixed-variant": "#76330d" }, "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, "spacing": { "gutter-md": "1.5rem", "gutter": "1rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-md": "2rem", "margin-lg": "3rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin": "1rem", "space-xl": "2.5rem" }, "fontFamily": { "headline-lg-mobile": [ "Plus Jakarta Sans" ], "display-lg-mobile": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "title-md": [ "Plus Jakarta Sans" ], "body-md": [ "Plus Jakarta Sans" ], "display-lg": [ "Plus Jakarta Sans" ], "body-lg": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "title-lg": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "label-lg": [ "Plus Jakarta Sans" ], "label-sm": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ] }, "fontSize": { "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "display-lg-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "800" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "700" } ], "title-md": [ "16px", { "lineHeight": "22px", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "display-lg": [ "56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "title-lg": [ "18px", { "lineHeight": "24px", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" } ] } } } };
@@ -70,6 +146,7 @@
         <p class="font-title-md text-title-md text-on-surface-variant font-semibold">Keranjang belanja kosong</p>
         <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Tambahkan es krim favorit Anda!</p>
       </div>
+      <div id="cartItemsList"></div>
     </div>
     
     <div id="cartFooter" class="border-t border-outline-variant p-space-lg bg-surface-container-low hidden">
@@ -102,7 +179,7 @@
 
 <div id="cartOverlay" onclick="toggleCart()" class="fixed inset-0 bg-black/50 z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(120,53,15,0.06)]">
+<header id="siteHeader" class="site-header fixed top-0 left-0 right-0 z-50">
   <div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg flex items-center justify-between">
     <div class="flex items-center gap-space-sm">
       <img src="logo.png" alt="Logo Esthio" width="56" height="56" class="w-14 h-14 rounded-full shadow-sm object-cover">
@@ -133,7 +210,7 @@
     </div>
   </div>
   
-  <div id="mobileMenu" class="hidden lg:hidden border-t border-outline-variant bg-surface/98 backdrop-blur-xl mobile-menu">
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-white/40 bg-surface/75 mobile-menu">
     <nav class="px-margin py-space-md flex flex-col gap-1">
       <a class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all font-title-md" href="#varian" onclick="toggleMobileMenu()">Katalog Rasa</a>
       <a class="px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all font-title-md" href="#keunggulan" onclick="toggleMobileMenu()">Keunggulan Bahan</a>
@@ -167,7 +244,7 @@ Perpaduan legendaris keping biskuit gabin gurih berkaramel renyah dengan isian <
 <span class="">Lihat Menu & Pesan</span>
 <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
 </a>
-<button onclick="toggleCart()" class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md rounded-full bg-surface-container text-primary font-label-lg text-label-lg font-bold hover:bg-surface-container-high transition-all">
+<button onclick="toggleCart()" class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md rounded-full bg-surface-container-lowest text-primary border-2 border-primary font-label-lg text-label-lg font-bold shadow-md hover:bg-primary hover:text-on-primary hover:shadow-lg transition-all active:scale-95">
 <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
 <span class="">Lihat Keranjang</span>
 </button>
@@ -754,7 +831,7 @@ const CART_HAPTIC_ENABLED = true;  // ubah ke false untuk mematikan getar
 
 let cartAudioCtx = null;
 
-function playCartSound() {
+function playCartSoundSynth() {   // cadangan (Web Audio)
   if (!CART_SOUND_ENABLED) return;
   try {
     const AC = window.AudioContext || window.webkitAudioContext;
@@ -780,6 +857,76 @@ function playCartSound() {
       osc.stop(start + 0.18);
     });
   } catch (e) {}
+}
+
+// Suara utama: dibuat sebagai file WAV di memori lalu diputar lewat elemen <audio>.
+// Cara ini tetap bunyi di iPhone walau tombol silent menyala (Web Audio biasa akan dibisukan)
+// dan lebih keras/jelas di speaker HP.
+let cartSoundUrl = null;
+const cartSoundPool = [];
+let cartSoundIdx = 0;
+
+function buildCartSoundWav() {
+  const rate = 44100;
+  const n = Math.floor(rate * 0.75);
+  const data = new Float32Array(n);
+  // [mulai (detik), frekuensi awal, frekuensi akhir, volume, peluruhan]
+  const notes = [
+    [0.00,  380,  980, 0.55, 0.13],   // "bloop": nada meluncur naik
+    [0.11, 1318, 1318, 0.38, 0.22],   // ding 1
+    [0.21, 1760, 1760, 0.34, 0.28],   // ding 2
+    [0.31, 2637, 2637, 0.16, 0.20]    // kilau
+  ];
+  notes.forEach(([start, f0, f1, amp, decay]) => {
+    const s0 = Math.floor(start * rate);
+    let phase = 0;
+    for (let i = 0; s0 + i < n; i++) {
+      const t = i / rate;
+      const f = f0 === f1 ? f0 : f0 * Math.pow(f1 / f0, Math.min(1, t / 0.10));
+      phase += 2 * Math.PI * f / rate;
+      const env = Math.min(1, t / 0.004) * Math.exp(-t / decay);
+      data[s0 + i] += amp * env * (Math.sin(phase) + 0.25 * Math.sin(2 * phase));
+    }
+  });
+  // normalisasi + fade-out di ujung supaya tidak ada bunyi "klik"
+  let peak = 0;
+  for (let i = 0; i < n; i++) peak = Math.max(peak, Math.abs(data[i]));
+  const fade = Math.floor(rate * 0.15);
+  const gain = peak > 0 ? 0.85 / peak : 1;
+  for (let i = 0; i < n; i++) {
+    const tail = n - i;
+    data[i] *= gain * (tail < fade ? 0.5 - 0.5 * Math.cos(Math.PI * tail / fade) : 1);
+  }
+  // tulis header WAV 16-bit mono
+  const bytes = new Uint8Array(44 + n * 2);
+  const view = new DataView(bytes.buffer);
+  const tag = (o, str) => { for (let i = 0; i < str.length; i++) view.setUint8(o + i, str.charCodeAt(i)); };
+  tag(0, 'RIFF'); view.setUint32(4, 36 + n * 2, true); tag(8, 'WAVE'); tag(12, 'fmt ');
+  view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 1, true);
+  view.setUint32(24, rate, true); view.setUint32(28, rate * 2, true);
+  view.setUint16(32, 2, true); view.setUint16(34, 16, true);
+  tag(36, 'data'); view.setUint32(40, n * 2, true);
+  for (let i = 0; i < n; i++) view.setInt16(44 + i * 2, Math.max(-1, Math.min(1, data[i])) * 32767, true);
+  return bytes;
+}
+
+function playCartSound() {
+  if (!CART_SOUND_ENABLED) return;
+  try {
+    if (!cartSoundUrl) cartSoundUrl = URL.createObjectURL(new Blob([buildCartSoundWav()], { type: 'audio/wav' }));
+    if (cartSoundPool.length < 3) {
+      const a = new Audio(cartSoundUrl);
+      a.preload = 'auto';
+      a.volume = 0.8;
+      cartSoundPool.push(a);
+    }
+    const audio = cartSoundPool[cartSoundIdx++ % cartSoundPool.length];
+    audio.currentTime = 0;
+    const p = audio.play();
+    if (p && p.catch) p.catch(() => playCartSoundSynth());   // kalau diblokir, coba cara cadangan
+  } catch (e) {
+    playCartSoundSynth();
+  }
 }
 
 function triggerHaptic() {
@@ -827,10 +974,9 @@ function addToCartFromSpotlight() {
   currentQty = 1;
   document.getElementById("qtyCounter").innerText = "1";
   
-  updateCartUI();
   saveCartToStorage();
-  
-  playAddToCartFeedback();
+  playAddToCartFeedback();   // bunyi + getar lebih dulu, tidak bergantung pada proses menggambar keranjang
+  updateCartUI();
 
   const badge = document.getElementById('cartCount');
   badge.classList.add('cart-bounce');
@@ -841,7 +987,7 @@ function addToCartFromSpotlight() {
 
 function updateCartUI() {
   const cartCount = document.getElementById('cartCount');
-  const cartItemsContainer = document.getElementById('cartItemsContainer');
+  const cartItemsContainer = document.getElementById('cartItemsList');   // daftar item (terpisah dari pesan kosong)
   const emptyMessage = document.getElementById('emptyCartMessage');
   const cartFooter = document.getElementById('cartFooter');
   const cartTotal = document.getElementById('cartTotal');
@@ -866,6 +1012,7 @@ function updateCartUI() {
   }
   
   if (cart.length === 0) {
+    cartItemsContainer.innerHTML = '';
     emptyMessage.classList.remove('hidden');
     cartFooter.classList.add('hidden');
     return;
@@ -1029,6 +1176,160 @@ function renderCatalogGrid() {
   `).join('');
 }
 
+// ===== Navigasi kaca (glass) saat di-scroll =====
+function initHeaderGlass() {
+  const header = document.getElementById('siteHeader');
+  if (!header) return;
+  const update = () => header.classList.toggle('is-scrolled', window.scrollY > 12);
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+// ===== Animasi muncul saat scroll =====
+function initScrollReveal() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  const root = document.documentElement;
+  const records = new Map();   // elemen -> { el, total, original }
+  const hosts = new Map();     // elemen yang diamati -> daftar record yang dipicu olehnya
+  const WORD_STEP = 60;
+
+  // host = elemen yang diamati IntersectionObserver (default: elemen itu sendiri)
+  function register(el, total, original, host) {
+    const rec = { el, total, original };
+    records.set(el, rec);
+    const target = host || el;
+    if (!hosts.has(target)) hosts.set(target, []);
+    hosts.get(target).push(rec);
+  }
+
+  // Blok biasa: naik + muncul (opsional: blur / zoom)
+  function mark(el, delay, opts) {
+    if (!el || records.has(el)) return;
+    opts = opts || {};
+    el.classList.add('reveal');
+    if (opts.blur) el.classList.add('reveal-blur');
+    if (opts.zoom) el.classList.add('reveal-zoom');
+    el.style.setProperty('--reveal-delay', delay + 'ms');
+    register(el, delay + 900, null);
+  }
+
+  // Judul hero: terbuka dari kiri ke kanan
+  function markWipe(el, delay) {
+    if (!el || records.has(el)) return;
+    el.classList.add('reveal-wipe');
+    el.style.setProperty('--reveal-delay', delay + 'ms');
+    register(el, delay + 1100, null, el.parentElement);   // diamati lewat induknya (clip-path membuat elemen sendiri dianggap tak terlihat)
+  }
+
+  // Judul section: muncul per kata
+  function markWords(el, delay) {
+    if (!el || records.has(el) || el.children.length > 0) return;
+    const original = el.textContent;
+    const words = original.trim().split(/\s+/);
+    el.setAttribute('aria-label', original.trim());
+    el.textContent = '';
+    words.forEach((w, i) => {
+      const span = document.createElement('span');
+      span.className = 'word';
+      span.setAttribute('aria-hidden', 'true');
+      span.style.setProperty('--i', i);
+      span.textContent = w;
+      el.appendChild(span);
+      if (i < words.length - 1) el.appendChild(document.createTextNode(' '));
+    });
+    el.classList.add('split-words');
+    el.style.setProperty('--reveal-delay', delay + 'ms');
+    register(el, delay + words.length * WORD_STEP + 900, original);
+  }
+
+  function stagger(list, base, step, opts) {
+    Array.from(list).forEach((el, i) => mark(el, base + i * step, opts));
+  }
+
+  // Kembalikan elemen ke kondisi normal setelah animasi selesai
+  function finish(rec) {
+    const el = rec.el;
+    el.classList.remove('reveal', 'reveal-blur', 'reveal-zoom', 'reveal-wipe', 'reveal-in', 'split-words');
+    el.style.removeProperty('--reveal-delay');
+    if (rec.original !== null) {
+      el.textContent = rec.original;
+      el.removeAttribute('aria-label');
+    }
+    if (!el.getAttribute('style')) el.removeAttribute('style');
+    records.delete(el);
+  }
+
+  try {
+    const sections = Array.from(document.querySelectorAll('main section'));
+
+    // --- Hero: muncul berurutan saat halaman dibuka ---
+    const hero = sections[0];
+    if (hero) {
+      const grid = hero.querySelector('.grid');
+      const left = grid && grid.children[0];
+      const right = grid && grid.children[1];
+      if (left) {
+        Array.from(left.children).forEach((child, i) => {
+          if (child.tagName === 'H1') markWipe(child, i * 130);
+          else mark(child, i * 130, { blur: child.tagName === 'P' });
+        });
+      }
+      if (right) mark(right, 350, { zoom: true });
+    }
+
+    // --- Judul tiap section (label, judul per kata, deskripsi) ---
+    sections.slice(1).forEach(sec => {
+      const head = sec.querySelector(':scope > div > .text-center');
+      if (!head) return;
+      mark(head.querySelector('span'), 0, { blur: true });
+      markWords(head.querySelector('h2'), 120);
+      mark(head.querySelector('p'), 380, { blur: true });
+    });
+
+    // --- Katalog / varian ---
+    const chip = document.querySelector('.flavor-chip');
+    if (chip) mark(chip.parentElement, 0);
+    const flavorTitle = document.getElementById('flavorTitle');
+    if (flavorTitle) mark(flavorTitle.closest('[class*="grid-cols-12"]'), 0);
+    mark(document.querySelector('#katalog-lengkap > div'), 0);
+    stagger(document.querySelectorAll('#catalogGrid > *'), 0, 100);
+
+    // --- Keunggulan, kontak, review, footer ---
+    stagger(document.querySelectorAll('#keunggulan .grid > *'), 100, 150);
+    mark(document.querySelector('#keunggulan .mt-space-lg'), 100);
+    mark(document.querySelector('#lokasi > div > div'), 0);
+    const reviewForm = document.getElementById('reviewForm');
+    if (reviewForm) mark(reviewForm.closest('.max-w-2xl'), 0);
+    stagger(document.querySelectorAll('footer .grid > *'), 0, 130);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const list = hosts.get(entry.target);
+        if (!list) return;
+        const passed = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+        if (!entry.isIntersecting && !passed) return;
+        observer.unobserve(entry.target);
+        hosts.delete(entry.target);
+        list.forEach(rec => {
+          if (passed) { finish(rec); return; }        // sudah terlewati: langsung tampil
+          rec.el.classList.add('reveal-in');
+          setTimeout(() => finish(rec), rec.total + 150);
+        });
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    root.classList.add('reveal-ready');   // sembunyikan elemen hanya setelah semuanya siap
+    hosts.forEach((list, host) => observer.observe(host));
+  } catch (err) {
+    // Kalau ada masalah, pastikan semua konten tetap terlihat
+    root.classList.remove('reveal-ready');
+    Array.from(records.values()).forEach(finish);
+    console.warn('Animasi scroll dinonaktifkan:', err);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   selectFlavor(0);
   loadCartFromStorage();
@@ -1036,6 +1337,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCatalogGrid();
   loadReviews();
   initReviewForm();
+  try { initHeaderGlass(); } catch (e) {}
+  try { initScrollReveal(); } catch (e) {}
 });
 
 document.addEventListener('click', function(e) {
