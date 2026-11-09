@@ -73,6 +73,18 @@
     </div>
     
     <div id="cartFooter" class="border-t border-outline-variant p-space-lg bg-surface-container-low hidden">
+      <div id="cartSubtotalRow" class="hidden">
+        <div class="flex items-center justify-between mb-space-xs text-on-surface-variant font-body-md text-body-md">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">Rp 0</span>
+        </div>
+      </div>
+      <div id="cartPromoRow" class="hidden">
+        <div class="flex items-center justify-between mb-space-sm text-tertiary font-body-md text-body-md font-bold">
+          <span id="cartPromoLabel">Promo Beli 2 Rp 18.000</span>
+          <span id="cartPromoAmount">-Rp 0</span>
+        </div>
+      </div>
       <div class="flex items-center justify-between mb-space-md">
         <span class="font-title-lg text-title-lg text-on-surface">Total:</span>
         <span id="cartTotal" class="font-headline-md text-headline-md text-primary font-bold">Rp 0</span>
@@ -93,9 +105,7 @@
 <header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(120,53,15,0.06)]">
   <div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-md lg:px-margin-lg flex items-center justify-between">
     <div class="flex items-center gap-space-sm">
-      <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm">
-        <span class="material-symbols-outlined text-[24px]">icecream</span>
-      </div>
+      <img src="logo.png" alt="Logo Esthio" width="56" height="56" class="w-14 h-14 rounded-full shadow-sm object-cover">
       <div class="flex flex-col">
         <a class="font-headline-sm text-headline-sm text-primary tracking-tight font-extrabold flex items-center gap-1 leading-none" href="#">Esthio<span class="w-1.5 h-1.5 rounded-full bg-secondary self-end mb-1"></span></a>
         <span class="text-[11px] font-semibold text-secondary tracking-wider uppercase">esthio.biz.id</span>
@@ -163,13 +173,13 @@ Perpaduan legendaris keping biskuit gabin gurih berkaramel renyah dengan isian <
 </button>
 </div>
 <div class="pt-space-md mt-space-xs flex flex-wrap items-center gap-y-space-sm gap-x-space-md text-on-surface-variant">
+<div class="flex items-center gap-space-xs bg-secondary-container px-space-md py-space-xs rounded-full shadow-sm">
+<span class="material-symbols-outlined text-on-secondary-container text-[18px]">local_offer</span>
+<span class="font-body-sm text-body-sm font-bold text-on-secondary-container">Promo: Beli 2 cuma Rp 18.000</span>
+</div>
 <div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-sm">
 <span class="material-symbols-outlined text-tertiary text-[18px]">verified</span>
 <span class="font-body-sm text-body-sm font-semibold text-on-surface">100% Homemade</span>
-</div>
-<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-sm">
-<span class="material-symbols-outlined text-tertiary text-[18px]">ac_unit</span>
-<span class="font-body-sm text-body-sm font-semibold text-on-surface">Dikirim Beku Termal Box & Ice Gel</span>
 </div>
 <div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-sm">
 <span class="material-symbols-outlined text-secondary text-[18px]">local_shipping</span>
@@ -250,12 +260,6 @@ Eksplorasi rasa artisanal kami di bawah ini. Pilih rasa untuk melihat profil sen
 <span>110 gr / porsi</span>
 </div>
 </div>
-<div class="mt-space-md p-space-sm rounded-2xl bg-secondary-fixed/40 flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-secondary text-[24px]">redeem</span>
-<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant font-medium">
-<strong>Paket Box Hemat (Isi 5 atau 10):</strong> Sudah termasuk kotak thermal insulated & reusable ice gel.
-</p>
-</div>
 </div>
 
 <div class="lg:col-span-7 flex flex-col gap-space-md">
@@ -267,7 +271,7 @@ Eksplorasi rasa artisanal kami di bawah ini. Pilih rasa untuk melihat profil sen
 <div class="text-left sm:text-right">
 <span class="font-label-sm text-label-sm text-on-surface-variant block">Harga Satuan</span>
 <span class="font-headline-md text-headline-md text-secondary font-bold" id="flavorPrice">Rp 10.000</span>
-<span class="font-label-sm text-label-sm text-tertiary block font-semibold" id="flavorBoxPrice">Box 5 pcs: Rp 45.000</span>
+<span class="font-label-sm text-label-sm text-secondary block font-bold" id="flavorPromo">Promo: Beli 2 cuma Rp 18.000</span>
 </div>
 </div>
 
@@ -378,7 +382,6 @@ Susu Segar Peternak Lokal
 </div>
 <div>
 <p class="font-title-md text-title-md text-on-surface font-bold">Pengiriman Aman Rantai Dingin</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Setiap pengiriman menggunakan kemasan insulated box dan pendingin khusus agar sampai tetap beku sempurna.</p>
 </div>
 </div>
 <div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md font-bold whitespace-nowrap">
@@ -396,7 +399,7 @@ Susu Segar Peternak Lokal
 <span class="font-label-md text-label-md text-secondary font-bold uppercase">Pemesanan Langsung & Kemitraan</span>
 <h3 class="font-headline-lg text-headline-lg text-primary font-bold">Ingin Menikmati Esthio Hari Ini?</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-Pemesanan dilakukan langsung secara cepat dan mudah via WhatsApp Resmi. CS kami siap membantu pilihan paket, perhitungan ongkir pengiriman beku, serta jadwal kirim tercepat.
+Pemesanan dilakukan langsung secara cepat dan mudah via WhatsApp Resmi. CS kami siap membantu perhitungan ongkir pengiriman beku serta jadwal kirim tercepat.
 </p>
 <div class="flex flex-wrap items-center gap-space-md pt-space-xs text-on-surface text-body-sm">
 <div class="flex items-center gap-1 font-semibold text-primary">
@@ -574,7 +577,7 @@ Esthio - Gabin Es Krim Artisan. Menghadirkan kelezatan otentik es krim lembut da
 <h3 class="font-title-lg text-title-lg text-on-surface font-bold">Informasi & Layanan</h3>
 <div class="flex flex-col gap-space-xs">
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#keunggulan">Tentang Kualitas Esthio</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#varian">Katalog Rasa & Paket Box</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#varian">Katalog Rasa & Promo</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#lokasi">Prosedur Pengiriman Beku</a>
 <span class="font-body-md text-body-md text-on-surface-variant">Domain Resmi: esthio.biz.id</span>
 </div>
@@ -605,7 +608,6 @@ const flavorData = [
     tagline: "Es krim vanilla lembut berpadu renyah remahan biskuit cookies hitam manis gurih",
     description: "Dibuat dengan es krim vanilla susu creamy berpadu butiran renyah biskuit cookies hitam manis gurih. Dijepit dengan keping gabin double-baked berkaramel khas Esthio yang menghasilkan sensasi tekstur garing lumer di mulut.",
     price: 10000,
-    boxPrice: "Box 5 pcs: Rp 45.000",
     notes: "Notes: Creamy Vanilla, Crunchy Black Cookies, Buttery Cracker",
     sweet: 7.5,
     creamy: 9.5,
@@ -622,7 +624,6 @@ const flavorData = [
     tagline: "Es krim dark chocolate Belgia pekat dengan kelembutan premium",
     description: "Kombinasi mewah cokelat Belgia berkualitas tinggi yang kaya rasa dan lelehan selai cokelat pekat di tengah es krim lembut. Rasa legit manis-pahit yang elegan di setiap gigitan dengan sensasi melt in mouth.",
     price: 10000,
-    boxPrice: "Box 5 pcs: Rp 45.000",
     notes: "Notes: Belgian Dark Cocoa 54%, Fudge, Rich & Creamy",
     sweet: 7.5,
     creamy: 9.8,
@@ -639,7 +640,6 @@ const flavorData = [
     tagline: "Asam manis fruity swirl stroberi segar pegunungan yang dingin ceria",
     description: "Dibuat dari buah stroberi alami yang diolah menjadi swirl asam manis alami, memberikan ledakan kesegaran buah asli di tengah biskuit gabin emas yang super garing. Sensasi fruity yang menyegarkan di setiap gigitan.",
     price: 10000,
-    boxPrice: "Box 5 pcs: Rp 45.000",
     notes: "Notes: Fresh Highland Strawberry, Berry Swirl, Crisp Sugar",
     sweet: 7.2,
     creamy: 9.0,
@@ -656,7 +656,6 @@ const flavorData = [
     tagline: "Matcha otentik Kyoto Jepang dengan rasa teh hijau harum menenangkan",
     description: "Serbuk matcha berkualitas dari perkebunan Kyoto berpadu selaras dengan es krim lembut premium. Gurih, sedikit sepat elegan, dan sangat menyegarkan dengan aroma khas matcha ceremonial grade.",
     price: 10000,
-    boxPrice: "Box 5 pcs: Rp 45.000",
     notes: "Notes: Kyoto Matcha, Umami Herbal, Velvety Cream",
     sweet: 6,
     creamy: 9.2,
@@ -672,6 +671,34 @@ const flavorData = [
 let cart = [];
 let currentFlavorIdx = 0;
 let currentQty = 1;
+
+// ===== Promo: beli 2 pcs (rasa apa saja) jadi Rp 18.000 =====
+const PROMO_QTY = 2;        // jumlah pcs per paket promo
+const PROMO_PRICE = 18000;  // harga untuk tiap paket promo
+
+// Hitung total keranjang dengan promo (berlaku campur rasa, kelipatan 2 pcs)
+function calcCartTotals() {
+  const units = [];
+  cart.forEach(i => { for (let n = 0; n < i.quantity; n++) units.push(i.price); });
+  units.sort((a, b) => b - a);
+
+  const totalQty = units.length;
+  const subtotal = units.reduce((sum, price) => sum + price, 0);
+  const pairs = Math.floor(totalQty / PROMO_QTY);
+
+  let discount = 0;
+  for (let k = 0; k < pairs; k++) {
+    const pairSum = units[k * PROMO_QTY] + units[k * PROMO_QTY + 1];
+    discount += Math.max(0, pairSum - PROMO_PRICE);
+  }
+  return { totalQty, subtotal, pairs, discount, total: subtotal - discount };
+}
+
+// Harga untuk qty tertentu dari satu rasa (dipakai badge di tombol "Tambah ke Keranjang")
+function promoPriceFor(price, qty) {
+  const pairs = Math.floor(qty / PROMO_QTY);
+  return pairs * Math.min(PROMO_PRICE, price * PROMO_QTY) + (qty % PROMO_QTY) * price;
+}
 
 function formatIDR(amount) {
   return "Rp " + amount.toLocaleString("id-ID");
@@ -690,7 +717,6 @@ function selectFlavor(index) {
   document.getElementById("flavorTagline").innerText = item.tagline;
   document.getElementById("flavorDescription").innerText = item.description;
   document.getElementById("flavorPrice").innerText = formatIDR(item.price);
-  document.getElementById("flavorBoxPrice").innerText = item.boxPrice;
   document.getElementById("flavorBadgeTag").innerHTML = '<span class="material-symbols-outlined text-[18px]">' + (item.icon === 'cookie' ? 'cookie' : item.icon === 'cake' ? 'cake' : item.icon === 'nutrition' ? 'nutrition' : 'local_cafe') + '</span><span>' + (item.icon === 'cookie' ? 'Crunch & Creamy Esthio' : item.icon === 'cake' ? 'Cokelat Belgia Premium' : item.icon === 'nutrition' ? 'Buah Segar Alami' : 'Kyoto Ceremonial Grade') + '</span>';
   document.getElementById("flavorNotes").innerText = item.notes;
   
@@ -718,7 +744,7 @@ function updateQty(delta) {
 
 function updateLiveCalculations() {
   const item = flavorData[currentFlavorIdx];
-  const total = item.price * currentQty;
+  const total = promoPriceFor(item.price, currentQty);
   document.getElementById("calculatedTotalBadge").innerText = "(" + formatIDR(total) + ")";
 }
 
@@ -821,10 +847,23 @@ function updateCartUI() {
   const cartTotal = document.getElementById('cartTotal');
   
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  
+  const totals = calcCartTotals();
+
   cartCount.textContent = totalItems;
-  cartTotal.textContent = formatIDR(totalPrice);
+  cartTotal.textContent = formatIDR(totals.total);
+
+  const subtotalRow = document.getElementById('cartSubtotalRow');
+  const promoRow = document.getElementById('cartPromoRow');
+  if (totals.discount > 0) {
+    document.getElementById('cartSubtotal').textContent = formatIDR(totals.subtotal);
+    document.getElementById('cartPromoLabel').textContent = `Promo Beli ${PROMO_QTY} ${formatIDR(PROMO_PRICE)} (${totals.pairs}x)`;
+    document.getElementById('cartPromoAmount').textContent = '-' + formatIDR(totals.discount);
+    subtotalRow.classList.remove('hidden');
+    promoRow.classList.remove('hidden');
+  } else {
+    subtotalRow.classList.add('hidden');
+    promoRow.classList.add('hidden');
+  }
   
   if (cart.length === 0) {
     emptyMessage.classList.remove('hidden');
@@ -914,20 +953,20 @@ function buildWhatsAppMessage() {
   lines.push("");
   lines.push("*Detail Pesanan*");
 
-  let totalQty = 0;
-  let totalPrice = 0;
-
   cart.forEach((item, index) => {
-    const subtotal = item.price * item.quantity;
-    totalQty += item.quantity;
-    totalPrice += subtotal;
     lines.push(`${index + 1}. ${item.name}`);
-    lines.push(`    ${item.quantity} pcs x ${formatIDR(item.price)} = ${formatIDR(subtotal)}`);
+    lines.push(`    ${item.quantity} pcs x ${formatIDR(item.price)} = ${formatIDR(item.price * item.quantity)}`);
   });
+
+  const t = calcCartTotals();
 
   lines.push("");
   lines.push(line);
-  lines.push(`*Total: ${formatIDR(totalPrice)}* (${totalQty} pcs)`);
+  if (t.discount > 0) {
+    lines.push(`Subtotal : ${formatIDR(t.subtotal)}`);
+    lines.push(`Promo Beli ${PROMO_QTY} ${formatIDR(PROMO_PRICE)} (${t.pairs}x) : -${formatIDR(t.discount)}`);
+  }
+  lines.push(`*Total: ${formatIDR(t.total)}* (${t.totalQty} pcs)`);
   lines.push("_Belum termasuk ongkir_");
   lines.push(line);
   lines.push("");
