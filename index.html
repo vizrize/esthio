@@ -568,6 +568,12 @@ Review asli dari pelanggan yang sudah merasakan kelezatan Esthio
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">Min. 10 karakter, max. 500 karakter</p>
 </div>
 
+<div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+<label>Website (jangan diisi)
+<input type="text" id="reviewWebsite" name="website" tabindex="-1" autocomplete="off">
+</label>
+</div>
+
 <div id="reviewMessage" class="hidden p-space-sm rounded-lg"></div>
 
 <button type="submit" id="submitReviewBtn"
@@ -1349,12 +1355,24 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// Load and Display Reviews from JSON
+// Ambil data review: utama dari /api/reviews (Vercel), cadangan dari reviews.json (hosting PHP / statis)
+async function fetchReviewsData() {
+  try {
+    const res = await fetch('/api/reviews', { cache: 'no-store', headers: { 'Accept': 'application/json' } });
+    const type = res.headers.get('content-type') || '';
+    if (res.ok && type.indexOf('json') !== -1) {
+      return await res.json();
+    }
+  } catch (e) { /* lanjut ke cadangan */ }
+  const fallback = await fetch('reviews.json', { cache: 'no-store' });
+  return await fallback.json();
+}
+
+// Load and Display Reviews
 async function loadReviews() {
   try {
-    const response = await fetch('reviews.json');
-    const data = await response.json();
-    const reviews = data.reviews || [];
+    const data = await fetchReviewsData();
+    const reviews = Array.isArray(data && data.reviews) ? data.reviews : [];
     
     const container = document.getElementById('reviewsContainer');
     const emptyState = document.getElementById('emptyReviews');
@@ -1451,7 +1469,7 @@ function escapeHtml(text) {
     '"': '&quot;',
     "'": '&#039;'
   };
-  return text.replace(/[&<>"']/g, m => map[m]);
+  return String(text == null ? '' : text).replace(/[&<>"']/g, m => map[m]);
 }
 
 // Review Form Handler
@@ -1522,7 +1540,8 @@ function initReviewForm() {
       name: document.getElementById('reviewName').value.trim(),
       rating: parseInt(ratingInput.value),
       comment: document.getElementById('reviewComment').value.trim(),
-      variant: document.getElementById('reviewVariant').value
+      variant: document.getElementById('reviewVariant').value,
+      website: (document.getElementById('reviewWebsite') || { value: '' }).value
     };
     
     // Disable button
@@ -1530,13 +1549,20 @@ function initReviewForm() {
     submitBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span><span>Mengirim...</span>';
     
     try {
-      const response = await fetch('submit-review.php', {
+      const postReview = (url) => fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
       });
+      const isJson = (r) => (r.headers.get('content-type') || '').indexOf('json') !== -1;
+
+      // Utama: /api/reviews (Vercel). Jika tidak ada (hosting PHP), pakai submit-review.php
+      let response = await postReview('/api/reviews');
+      if (!isJson(response)) {
+        response = await postReview('submit-review.php');
+      }
       
       const result = await response.json();
       
@@ -1580,7 +1606,7 @@ function initReviewForm() {
     messageDiv.innerHTML = `
       <div class="flex items-center gap-space-sm">
         <span class="material-symbols-outlined text-[20px]">${type === 'error' ? 'error' : 'check_circle'}</span>
-        <span class="font-body-md text-body-md font-semibold">${message}</span>
+        <span class="font-body-md text-body-md font-semibold">${escapeHtml(message)}</span>
       </div>
     `;
   }
