@@ -117,6 +117,10 @@ html { scroll-behavior: smooth; }
 }
 .reveal-ready .split-words.reveal-in .word { opacity: 1; transform: none; filter: none; }
 
+/* Baris pilihan rasa: bisa digeser (swipe) di mobile, tanpa scrollbar */
+.chip-scroll { scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+.chip-scroll::-webkit-scrollbar { display: none; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
@@ -308,17 +312,17 @@ Eksplorasi rasa artisanal kami di bawah ini. Pilih rasa untuk melihat profil sen
 </p>
 </div>
 
-<div class="flex flex-wrap items-center justify-center gap-space-xs md:gap-space-sm mb-space-lg">
-<button class="flavor-chip px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm bg-primary-container text-on-primary-container scale-105" id="chip-0" onclick="selectFlavor(0)">
+<div id="flavorChipRow" class="chip-scroll flex flex-nowrap sm:flex-wrap items-center justify-start sm:justify-center gap-space-xs md:gap-space-sm mb-space-lg overflow-x-auto sm:overflow-visible snap-x snap-proximity -mx-margin px-margin py-2 sm:mx-0 sm:px-0 sm:py-0">
+<button class="flavor-chip shrink-0 whitespace-nowrap snap-center px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm bg-primary-container text-on-primary-container scale-105" id="chip-0" onclick="selectFlavor(0)">
 <span class="material-symbols-outlined text-[18px]">cookie</span>Cookies & Cream
 </button>
-<button class="flavor-chip px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" id="chip-1" onclick="selectFlavor(1)">
+<button class="flavor-chip shrink-0 whitespace-nowrap snap-center px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" id="chip-1" onclick="selectFlavor(1)">
 <span class="material-symbols-outlined text-[18px]">cake</span>Chocolate
 </button>
-<button class="flavor-chip px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" id="chip-2" onclick="selectFlavor(2)">
+<button class="flavor-chip shrink-0 whitespace-nowrap snap-center px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" id="chip-2" onclick="selectFlavor(2)">
 <span class="material-symbols-outlined text-[18px]">nutrition</span>Strawberry
 </button>
-<button class="flavor-chip px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" id="chip-3" onclick="selectFlavor(3)">
+<button class="flavor-chip shrink-0 whitespace-nowrap snap-center px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container" id="chip-3" onclick="selectFlavor(3)">
 <span class="material-symbols-outlined text-[18px]">local_cafe</span>Matcha
 </button>
 </div>
@@ -407,7 +411,7 @@ Eksplorasi rasa artisanal kami di bawah ini. Pilih rasa untuk melihat profil sen
 <div class="flex items-center justify-between mb-space-md">
 <div>
 <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Katalog Lengkap Semua Varian</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Klik kartu rasa di bawah untuk memilih dan melihat detail lengkap.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Klik kartu rasa di bawah untuk melihat detail, atau langsung tambahkan ke keranjang.</p>
 </div>
 <span class="px-space-md py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm font-semibold text-primary">4 Pilihan Rasa</span>
 </div>
@@ -476,7 +480,7 @@ Susu Segar Peternak Lokal
 <span class="font-label-md text-label-md text-secondary font-bold uppercase">Pemesanan Langsung & Kemitraan</span>
 <h3 class="font-headline-lg text-headline-lg text-primary font-bold">Ingin Menikmati Esthio Hari Ini?</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-Pemesanan dilakukan langsung secara cepat dan mudah via WhatsApp Resmi. CS kami siap membantu perhitungan ongkir pengiriman beku serta jadwal kirim tercepat.
+Pemesanan dilakukan langsung secara cepat dan mudah via WhatsApp Resmi.
 </p>
 <div class="flex flex-wrap items-center gap-space-md pt-space-xs text-on-surface text-body-sm">
 <div class="flex items-center gap-1 font-semibold text-primary">
@@ -792,10 +796,19 @@ function selectFlavor(index) {
   const item = flavorData[index];
   
   document.querySelectorAll('.flavor-chip').forEach((chip, i) => {
-    chip.className = "flavor-chip px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm " + 
+    chip.className = "flavor-chip shrink-0 whitespace-nowrap snap-center px-space-md py-space-sm rounded-full font-label-md text-label-md font-bold transition-all flex items-center gap-2 shadow-sm " + 
       (i === index ? (item.activeColor + " scale-105") : "bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container");
   });
   
+  const chipRow = document.getElementById('flavorChipRow');
+  const activeChip = document.getElementById('chip-' + index);
+  if (chipRow && activeChip && chipRow.scrollWidth > chipRow.clientWidth) {
+    const rowBox = chipRow.getBoundingClientRect();
+    const chipBox = activeChip.getBoundingClientRect();
+    const delta = (chipBox.left - rowBox.left) - (rowBox.width - chipBox.width) / 2;
+    chipRow.scrollBy({ left: delta, behavior: 'smooth' });
+  }
+
   document.getElementById("flavorTitle").innerText = item.name;
   document.getElementById("flavorTagline").innerText = item.tagline;
   document.getElementById("flavorDescription").innerText = item.description;
@@ -961,25 +974,23 @@ function playAddToCartFeedback() {
   triggerHaptic();
 }
 
-function addToCartFromSpotlight() {
-  const item = flavorData[currentFlavorIdx];
-  const existingItem = cart.find(i => i.id === currentFlavorIdx);
-  
+// Tambah satu rasa ke keranjang (dipakai kartu spotlight & kartu katalog)
+function addFlavorToCart(index, qty) {
+  const item = flavorData[index];
+  const existingItem = cart.find(i => i.id === index);
+
   if (existingItem) {
-    existingItem.quantity += currentQty;
+    existingItem.quantity += qty;
   } else {
     cart.push({
-      id: currentFlavorIdx,
+      id: index,
       name: item.name,
       price: item.price,
-      quantity: currentQty,
+      quantity: qty,
       icon: item.icon
     });
   }
-  
-  currentQty = 1;
-  document.getElementById("qtyCounter").innerText = "1";
-  
+
   saveCartToStorage();
   playAddToCartFeedback();   // bunyi + getar lebih dulu, tidak bergantung pada proses menggambar keranjang
   updateCartUI();
@@ -987,8 +998,30 @@ function addToCartFromSpotlight() {
   const badge = document.getElementById('cartCount');
   badge.classList.add('cart-bounce');
   setTimeout(() => badge.classList.remove('cart-bounce'), 300);
-  
+}
+
+function addToCartFromSpotlight() {
+  addFlavorToCart(currentFlavorIdx, currentQty);
+
+  currentQty = 1;
+  document.getElementById("qtyCounter").innerText = "1";
+  updateLiveCalculations();
+
   toggleCart();
+}
+
+// Tombol "Tambah ke Keranjang" di Katalog Lengkap: tambah 1 pcs, keranjang tidak dibuka
+// supaya pembeli bisa lanjut memilih rasa lain (promo beli 2 campur rasa).
+function addToCartFromCatalog(index, btn) {
+  addFlavorToCart(index, 1);
+
+  if (!btn) return;
+  const entry = cart.find(i => i.id === index);
+  if (!btn.dataset.html) btn.dataset.html = btn.innerHTML;
+  btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>Ditambahkan' +
+    (entry ? ' (' + entry.quantity + ' di keranjang)' : '') + '</span>';
+  clearTimeout(btn._resetTimer);
+  btn._resetTimer = setTimeout(() => { btn.innerHTML = btn.dataset.html; }, 1400);
 }
 
 function updateCartUI() {
@@ -1098,11 +1131,11 @@ function buildWhatsAppMessage() {
   const line = "------------------------";
   const lines = [];
 
-  lines.push("*PESANAN BARU - ESTHIO*");
+  lines.push("*PRE-ORDER ESTHIO*");
   lines.push(line);
   lines.push("");
   lines.push("Halo Admin Esthio 👋");
-  lines.push("Saya ingin memesan dari katalog esthio.biz.id:");
+  lines.push("Saya ingin pre-order dari katalog esthio.biz.id:");
   lines.push("");
   lines.push("*Detail Pesanan*");
 
@@ -1122,12 +1155,10 @@ function buildWhatsAppMessage() {
   lines.push(`*Total: ${formatIDR(t.total)}* (${t.totalQty} pcs)`);
   lines.push(line);
   lines.push("");
-  lines.push("*Data Pengiriman*");
-  lines.push("Nama     : ");
-  lines.push("Alamat   : ");
-  lines.push("No. HP   : ");
+  lines.push("*Atas Nama*");
+  lines.push("Nama : ");
   lines.push("");
-  lines.push("Mohon info ketersediaan stok. Terima kasih 🙏");
+  lines.push("Mohon dikonfirmasi pre-order saya. Terima kasih 🙏");
 
   return lines.join("\n");
 }
@@ -1177,6 +1208,9 @@ function renderCatalogGrid() {
       <span class="font-label-sm text-label-sm text-secondary font-bold">${item.name}</span>
       <p class="font-title-md text-title-md text-primary font-bold">${formatIDR(item.price)}</p>
       <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">${item.tagline}</p>
+      <button type="button" class="catalog-add-btn mt-space-sm w-full inline-flex items-center justify-center gap-1.5 px-space-sm py-space-sm rounded-full bg-primary text-on-primary font-label-md text-label-md font-bold shadow-sm hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95" onclick="event.stopPropagation(); addToCartFromCatalog(${index}, this)" aria-label="Tambah ${item.name} ke keranjang">
+        <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span><span>Tambah ke Keranjang</span>
+      </button>
     </div>
   `).join('');
 }
